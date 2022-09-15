@@ -24,7 +24,7 @@ What this picture makes clear is that the Sitecore CLI can be used by a develope
 If we look at the login command in the screenshot above, we can see that the CLI talks directly to the XM Cloud instance provisioned by the Sitecore demo portal:
 
 ```
-dotnet sitecore login --client-credentials true --auth https://acme-xmcloud-id.sitecoredemo.com --cm https://acme-xmcloud-cm.sitecoredemo.com --allow-write true --client-id "Demo_Automation" --client-secret "511cdfab92b7440db866ac0fb817b490" -t
+dotnet sitecore login --client-credentials true --auth https://acme-xmcloud-id.sitecoredemo.com --cm https://acme-xmcloud-cm.sitecoredemo.com --allow-write true --client-id "Demo_Automation" --client-secret "xxxx" -t
 ```
 
 ## Sitecore CLI installation
@@ -65,7 +65,7 @@ What is nice is that in the `.vscode/settings.json` file JSON schema files are c
 When we execute the login command:
 
 ```
-sitecore login --client-credentials true --auth https://acme-xmcloud-id.sitecoredemo.com --cm https://acme-xmcloud-cm.sitecoredemo.com --allow-write true --client-id "Demo_Automation" --client-secret "511cdfab92b7440db866ac0fb817b490" -t
+sitecore login --client-credentials true --auth https://acme-xmcloud-id.sitecoredemo.com --cm https://acme-xmcloud-cm.sitecoredemo.com --allow-write true --client-id "Demo_Automation" --client-secret "xxxx" -t
 ```
 
 it still does not work. I decide to follow the advise from the Sitecore documentation and execute the following commands in the folder:
@@ -90,7 +90,7 @@ so I assume we are now ready to go!
 
 Now on execution of the login command:
 ```
-sitecore login --client-credentials true --auth https://acme-xmcloud-id.sitecoredemo.com --cm https://acme-xmcloud-cm.sitecoredemo.com --allow-write true --client-id "Demo_Automation" --client-secret "511cdfab92b7440db866ac0fb817b490" -t
+sitecore login --client-credentials true --auth https://acme-xmcloud-id.sitecoredemo.com --cm https://acme-xmcloud-cm.sitecoredemo.com --allow-write true --client-id "Demo_Automation" --client-secret "xxxx" -t
 ``` 
 
 the results looks more promising:
