@@ -26,5 +26,11 @@
         "typescript",
         "typescriptreact",
         "yml"
+    ],
+    "grammarly.selectors": [
+        {
+            "language": "markdown",
+            "scheme": "file"
+        }
     ]
 }
