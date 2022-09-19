@@ -1,31 +1,32 @@
 ---
-title: XM Cloud series - Part 2 - The Sitecore CLI
+title: Sitecore demo portal series - Part 2 - The Sitecore CLI
 published: true
-date: '2022-09-15'
-spoiler: In this second part of the XM Cloud series I investigate if the Sitecore CLI, as used during the configuration of XM Cloud by the Sitecore demo portal provisioning scripts, also works for the developer.  
-description: XM Cloud and the Sitecore CLI.
-tags: XM Cloud, Experience Edge, Sitecore Demo Portal, Sitecore CLI
-canonical_url: https://www.sergevandenoever.nl/XM_Cloud_sitecore_cli/
+date: '2022-09-19'
+spoiler: In this second part of the Sitecore demo portal series I investigate if the Sitecore CLI, as used during the configuration of Sitecore XM 10.2 by the Sitecore demo portal provisioning scripts, also works for the developer.  
+description: Sitecore demo portal and the Sitecore CLI.
+tags: Sitecore XM, Experience Edge, Sitecore Demo Portal, Sitecore CLI
+canonical_url: https://www.sergevandenoever.nl/Sitecore_demo_portal_sitecore_cli/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
-As described in my post [XM Cloud series - Part 1 - create an empty environment from scratch with the demo portal](https://www.sergevandenoever.nl/XM_Cloud_empty_environment/) the [Sitecore CLI](https://doc.sitecore.com/xp/en/developers/100/developer-tools/sitecore-command-line-interface.html) is used in the configuration of an XM Cloud instance when using the Sitecore demo portal:
+As described in my post [Sitecore demo portal series - Part 1 - create an empty environment from scratch with the demo portal](https://www.sergevandenoever.nl/Sitecore_demo_portal_empty_environment/) the [Sitecore CLI](https://doc.sitecore.com/xp/en/developers/100/developer-tools/sitecore-command-line-interface.html) is used in the configuration of a Sitecore XM 10.2 CM instance when using the Sitecore demo portal:
 
-![](XM_Cloud_sitecore_cli/sitecore-cli-during-installation.png)
+![](Sitecore_demo_portal_sitecore_cli/sitecore-cli-during-installation.png)
 
-CLI stands for Command Line Interface, and when developers see that there is a CLI available for a product they immediately get enthusiastic, because this means that tasks can be easily automated without having to write custom programs calling the APIs of the product.
+CLI stands for Command Line Interface, and when developers see that there is a CLI available for a product they immediately get enthusiastic because this means that tasks can be easily automated without having to write custom programs calling the APIs of the product.
 
 Sitecore starts its documentation on the Sitecore CLI with this picture:
 
-![](XM_Cloud_sitecore_cli/Sitecore-CLI.png)
+![](Sitecore_demo_portal_sitecore_cli/Sitecore-CLI.png)
 
 What this picture makes clear is that the Sitecore CLI can be used by a developer to control a remote Sitecore instance, from your developer workstation, so that means from a build pipeline as well!
 
-If we look at the login command in the screenshot above, we can see that the CLI talks directly to the XM Cloud instance provisioned by the Sitecore demo portal:
+If we look at the login command in the screenshot above, we can see that the CLI talks directly to the Sitecore XM Content |Management instance provisioned by the Sitecore demo portal:
 
 ```
 dotnet sitecore login --client-credentials true --auth https://acme-xmcloud-id.sitecoredemo.com --cm https://acme-xmcloud-cm.sitecoredemo.com --allow-write true --client-id "Demo_Automation" --client-secret "xxxx" -t
 ```
+(Please note that I mistakenly named the Sitecore instance **acme-xmcloud** - see the post [Sitecore demo portal series - Part 1 - create an empty environment from scratch with the demo portal](https://www.sergevandenoever.nl/Sitecore_demo_portal_empty_environment/) for an explanation)
 
 ## Sitecore CLI installation
 
@@ -46,7 +47,7 @@ Tool 'sitecore.cli' (version '5.0.16') was successfully installed.
 
 If you are working on a project with multiple developers, and have a project repository, follow the installation steps described by the [Sitecore documentation](https://doc.sitecore.com/xp/en/developers/102/developer-tools/install-sitecore-command-line-interface.html).
 
-## Testing the login on our XM Cloud instance
+## Testing the login on our Sitecore XM 10.2 instance
 
 When we try to execute the `sitecore login` command shown above (without `dotnet` in front of it, Sitecore CLI is now globally installed) we get the following error:
 
@@ -58,7 +59,7 @@ We need to create a folder and execute `sitecore init` in this folder to be able
 
 So I directly start it with `code .`:
 
-![](XM_Cloud_sitecore_cli/vscode.png)
+![](Sitecore_demo_portal_sitecore_cli/vscode.png)
 
 What is nice is that in the `.vscode/settings.json` file JSON schema files are connected to the different configuration files in the folder, so we will get intellisense (is that still the term?) in typing JSON.
 
@@ -68,7 +69,7 @@ When we execute the login command:
 sitecore login --client-credentials true --auth https://acme-xmcloud-id.sitecoredemo.com --cm https://acme-xmcloud-cm.sitecoredemo.com --allow-write true --client-id "Demo_Automation" --client-secret "xxxx" -t
 ```
 
-it still does not work. I decide to follow the advise from the Sitecore documentation and execute the following commands in the folder:
+it still does not work. I decide to follow the advice from the Sitecore documentation and execute the following commands in the folder:
 
 ```
 dotnet new tool-manifest
@@ -88,12 +89,12 @@ Tool 'sitecore.cli' (version '5.0.16') was successfully installed. Entry is adde
 
 so I assume we are now ready to go!
 
-Now on execution of the login command:
+On execution of the login command:
 ```
 sitecore login --client-credentials true --auth https://acme-xmcloud-id.sitecoredemo.com --cm https://acme-xmcloud-cm.sitecoredemo.com --allow-write true --client-id "Demo_Automation" --client-secret "xxxx" -t
 ``` 
 
-the results looks more promising:
+the results look more promising:
 
 ```
 Looking for package Sitecore.DevEx.Extensibility.Serialization@5.0.16
@@ -120,7 +121,7 @@ Authentication key successfully received from authority.
 Login information has been saved.
 ```
 
-Lets see if it really works. One of the commands in the configuration of XM Cloud using the Sitecore demo portal (see [XM Cloud series - Part 1 - create an empty environment from scratch with the demo portal](https://www.sergevandenoever.nl/XM_Cloud_empty_environment/) was:
+Lets see if it really works. One of the commands in the configuration of Sitecore XM 10.2 using the Sitecore demo portal (see [Sitecore demo portal series - Part 1 - create an empty environment from scratch with the demo portal](https://www.sergevandenoever.nl/Sitecore_demo_portal_empty_environment/) was:
 
 ```
 sitecore index rebuild
@@ -159,19 +160,19 @@ Could not locate plugin Sitecore.DevEx.Extensibility.Database@5.0.16. Some CLI c
 
 while the line above states that it skipped installation of that package because it is already installed!
 
-And if look at the directory structure in Visual Studio Code, the plugin seems to be installed:
+And if you look at the directory structure in Visual Studio Code, the plugin seems to be installed:
 
-![](XM_Cloud_sitecore_cli/database-plugin.png)
+![](Sitecore_demo_portal_sitecore_cli/database-plugin.png)
 
-I then remembered a blog post by my colleague and Sitecore MVP [Ronald van de Plas](https://www.linkedin.com/in/rvdplas/) with the name [Content Hub Tip #25: Fixing XM Cloud CLI](https://www.contenthub.dev/2022/08/content-hub-tip-25-fixing-xm-cloud-cli.html). With his fix, I still see the issue in the output. After some searching, I find a [Sitecore StackExchange message](https://sitecore.stackexchange.com/questions/32592/sitecore-cli-integrate-with-visual-studio-error) on the same topic that does not help either.
+After some searching, I find a [Sitecore StackExchange message](https://sitecore.stackexchange.com/questions/32592/sitecore-cli-integrate-with-visual-studio-error) on the same topic that does not help either.
 
 Still not willing to give up I decide to do some further digging. I rename the .nupkg files of the `Sitecore.DevEx.Extensibility.Database` plugin and the `Sitecore.DevEx.Extensibility.Indexing` plugin and I compare them:
 
-![](XM_Cloud_sitecore_cli/compare-plugins.png)
+![](Sitecore_demo_portal_sitecore_cli/compare-plugins.png)
 
 The directly noticeable difference is that the working Indexing plugin has a folder with assembly files, while this folder is missing in the Database plugin.
 
-When you look at the blog post [Create, package and publish a Sitecore CLI Plugin](https://www.nehemiahj.com/2022/06/create-package-and-publish-sitecore-cli.html) you will see that a plugin cannot exist without assemblies, so my conclusion is that the `Sitecore`.DevEx.Extensibility.Database` plugin is invalid and should be removed. Given the fact that XM Cloud should be treated as a database product anyway, it seems better to remove it anyway:
+When you look at the blog post [Create, package and publish a Sitecore CLI Plugin](https://www.nehemiahj.com/2022/06/create-package-and-publish-sitecore-cli.html) you will see that a plugin cannot exist without assemblies, so my conclusion is that the `Sitecore`.DevEx.Extensibility.Database` plugin is invalid and should be removed. Given the fact that Sitecore XM with its path to XM Cloud should be treated as a SaaS product anyway, it seems better to remove it anyway:
 
 ```
 sitecore plugin remove --name Sitecore.DevEx.Extensibility.Database
@@ -179,7 +180,7 @@ sitecore plugin remove --name Sitecore.DevEx.Extensibility.Database
 
 ## What plugins exist for the Sitecore CLI?
 
-Intrigued by the solution of Ronald that adding the Sitecore CLI plugin `Sitecore.DevEx.Extensibility.XMCloud` would solve the issue it made me wonder what plugins are available for the Sitecore CLI.
+Intrigued by plugin model of the Sitecore CLI made me wonder what other plugins are available for the Sitecore CLI.
 
 When you execute `sitecore plugin list` it just shows the locally installed plugins, I can see that in the `sitecore.json` file as well.
 
@@ -228,7 +229,7 @@ No results found.
 --------------------
 ```
 
-So the `Sitecore.DevEx.Extensibility.XMCloud` plugin does exist!
+So also a `Sitecore.DevEx.Extensibility.XMCloud` plugin does exist!
 
 ## Sitecore.DevEx.Extensibility.XMCloud
 
@@ -264,4 +265,4 @@ Commands:
   deployment   Provides administration of XM Cloud Deployments for the connected Organization
 ```
 
-This feels like material for another blog post!
+This feels like interesting material for another blog post!
