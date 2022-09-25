@@ -1,12 +1,12 @@
 ---
-title: Sitecore 9.3 SXA cheat sheet
-date: '2020-05-08'
-spoiler: A cheat sheet for Sitecore 9.3 SXA without C# coding.
+title: Sitecore SXA cheat sheet
+date: '2022-03-14'
+spoiler: A cheat sheet for Sitecore SXA without C# coding.
 ---
 
 # Introduction
-Sitecore has traditionally been a very extensible but code-centric platform. Every project consisted of a lot of C# code, MVC code, and Razor views. With Sitecore 9.3 and SXA a large part of the UI related C# code can be replaced by configuration and other types of code:
-- Scriban for server-rendered HTML (new in 9.3)
+Sitecore has traditionally been a very extensible but code-centric platform. Every project consisted of a lot of C# code, MVC code, and Razor views. With Sitecore SXA a large part of the UI related C# code can be replaced by configuration and other types of code:
+- Scriban for server-rendered HTML (since version 9.3)
 - SASS for styling
 - JavaScript/ES6 or TypeScript for the front-end code
 
@@ -19,7 +19,7 @@ The Sitecore documentation and the Sitecore UI is not consistent in terminology.
 
 I use the term *rendering instance* for a rendering added to a page.
 
-In the specified paths in the cheat sheet I use identifiers for elements in the paths. The following identifiers are used:
+In the specified paths in the cheat sheet, I use identifiers for elements in the paths. The following identifiers are used:
 
 - `<tenant>` - the name of the tenant
 - `<site>` - the name of the site
@@ -31,7 +31,7 @@ In the specified paths in the cheat sheet I use identifiers for elements in the 
 - `<rendering folder>` - the name of the folder to organize renderings in
 
 # SXA structure
-SXA has concept of **tenants** and **sites**:
+SXA has aconcept of **tenants** and **sites**:
 - **Tentants** can optionally be managed in a **tenant folder**.
 - **Sites** can optionally be managed in a **site folder**.
 
@@ -40,21 +40,21 @@ SXA has concept of **tenants** and **sites**:
 - **Themes location** - `/sitecore/Media Library/Themes/<tenant>`
 - **Media Library location** - `/sitecore/Media Library/Project/<tenant>`
 - **Shared Media Library location** - `/sitecore/Media Library/Project/<tenant>/shared`
-- **Modules** - set of selected modules for tenant, all named `<functionality> Tenant Setup`, where \<functionality\> one of: Composites, Content Validation, Error Handling, Forms, JSON, Navigation, Redirects, Search, Security, SiteMetadata, StickyNotes, Taxonomy, Editing, Grid, Local Datasources, Multisite, MVC, Presentation, Scaffolding, Theming
+- **Modules** - set of selected modules for a tenant, all named `<functionality> Tenant Setup`, where \<functionality\> is one of: Composites, Content Validation, Error Handling, Forms, JSON, Navigation, Redirects, Search, Security, SiteMetadata, StickyNotes, Taxonomy, Editing, Grid, Local Datasources, Multisite, MVC, Presentation, Scaffolding, Theming
 
 **Site** (with all modules selected) has configured on item:
 - **Site Media Library** - `/sitecore/Media Library/Project/<tenant>/<site>`
 - **Themes Folder** - `/sitecore/Media Library/Themes/<tenant>/<site>`
-- **Modules** - set of selected modules for site, all named `<functionality> Site Setup`, where \<functionality\> one of: Content Tokens, Creative Exchange, Local Datasources, Overlays, Redirects, Editing, Grid, Multisite, Placeholder Settings, Presentation, Accessibility, Analytics, Compliance, Composites, Context, Engagement, Events, Forms, Generic Meta Rendering, Geospatial, JSON,  Layout Services, Maps, Media, Navigation, Page Content, Page Structure, Search, Security, SiteMetadata, Social, StickyNotes, Taxonomy, Search, Theming 
+- **Modules** - set of selected modules for a site, all named `<functionality> Site Setup`, where \<functionality\> is one of: Content Tokens, Creative Exchange, Local Datasources, Overlays, Redirects, Editing, Grid, Multisite, Placeholder Settings, Presentation, Accessibility, Analytics, Compliance, Composites, Context, Engagement, Events, Forms, Generic Meta Rendering, Geospatial, JSON,  Layout Services, Maps, Media, Navigation, Page Content, Page Structure, Search, Security, SiteMetadata, Social, StickyNotes, Taxonomy, Search, Theming 
 - **Forms folder location** - `/sitecore/Forms/<tenant>/<site>`
-- **Role domain**: ?TODO what does this?
+- **Role domain**: *TODO what does this*
   
 **Site** has sub-items:
 - `Home` - contains site pages + `Overlays` -> presentation elements in overlay windows
 - `Media` - site-specific media items
   - `<site>` - ref to `/sitecore/Media Library/Project/<tenant>/<site>`
   - `shared` - ref to `/sitecore/media library/Project/<tenant>/shared`
-- `Data` - data sources reusable accross multiple pages, organized by rendering type
+- `Data` - data sources reusable across multiple pages, organized by rendering type
   <br/>For each rendering: `Insert <rendering>`; `Insert > <rendering folder>` to organize data sources
 - `<site> Dictionary` - translations for Scriban template ?TODO - what means "template"?
   <br/>`Insert > dictionary entry`; `Insert > dictionary folder`
@@ -103,7 +103,7 @@ SXA has concept of **tenants** and **sites**:
     <br/>`Insert > Twitter App` - Fields: `Application:Consumer Key`, `Application:Consumer Secret`, ...
 
 # Setting up a new tenant and site
-A new tenant [TODO]
+A new tenant... *TODO*
 
 ## New tenant
 New tenant creates template folder `/sitecore/Templates/Project/<tenant>` with sub-items specifying the selected base templates (Field: `Data:Base template`):
@@ -117,13 +117,13 @@ New tenant creates template folder `/sitecore/Templates/Project/<tenant>` with s
 - `Partial Designs` - Partial Designs
 - `Settings` - Settings, _Composite Theme, _Error Handling, _Search Criteria, _Favicon, _Robots Content, _SitemapSettings, _Datasource Behaviour, _Editing Theme, _Grid Mapping, _CustomRenderingViewPath, _Compatible themes
 - `Site` - Site, _Forms Folder Location, _Role Domain, _Modules
-- `Tenant` Tenant, _Forms Folder Location, _Role Domain, _Modules  
+- `Tenant` - Tenant, _Forms Folder Location, _Role Domain, _Modules  
 
 ## New site
-[TODO]
+*TODO*
 
 ## A site and its theme
-When a site has no theme assigned it will fallback to the **Wireframe** theme.
+When a site has no theme assigned it will fall back to the **Wireframe** theme.
 
 Assign theme:
 - Experience Editor: select **Experience Accelerator** tab, click **Theme**, select for **Default** the required theme
@@ -136,7 +136,6 @@ If your theme styles and scripts are preoptimized (advised - use [SXA Umbrella](
 on `/sitecore/content/<tenant>/<site>/Presentation/Page Designs` - field `Designing:Template to Design Mapping` [TODO]
 
 
-- 
 ## Extending SXA
 
 Create SXA extensions in the `/sitecore/Templates` folder using custom items outside standard SXA sections.
