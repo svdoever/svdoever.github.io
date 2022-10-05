@@ -41,7 +41,8 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
           {` • ${formatReadingTime(post.timeToRead)}`}
           <br/>
-          If you like my writing&nbsp;
+          If you like my writing
+          <br/>
           <a href='https://www.paypal.com/donate/?business=RQKF5AEJP7XSQ&no_recurring=0&item_name=Like+my+writings?+Buy+me+a+coffee%21&currency_code=EUR' target='_blank'>
             <img
               src={buyMeACoffeePic}
@@ -49,7 +50,7 @@ class BlogPostTemplate extends React.Component {
               style={{
                 marginRight: rhythm(1 / 2),
                 marginBottom: 0,
-                width: rhythm(4)
+                width: rhythm(6)
               }}
             />
           </a>

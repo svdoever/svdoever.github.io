@@ -38,7 +38,7 @@ class Bio extends React.Component {
           2022 Technology Sitecore Most Valuable Professional<br />
           2021 Technology Sitecore Most Valuable Professional<br />
           <hr />
-          If you like my writing&nbsp;
+          If you like my writing<br/>
           <a href='https://www.paypal.com/donate/?business=RQKF5AEJP7XSQ&no_recurring=0&item_name=Like+my+writings?+Buy+me+a+coffee%21&currency_code=EUR' target='_blank'>
             <img
               src={buyMeACoffeePic}
@@ -46,7 +46,7 @@ class Bio extends React.Component {
               style={{
                 marginRight: rhythm(1 / 2),
                 marginBottom: 0,
-                width: rhythm(4)
+                width: rhythm(6)
               }}
             />
           </a>
