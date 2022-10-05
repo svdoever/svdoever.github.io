@@ -49,7 +49,7 @@ class BlogPostTemplate extends React.Component {
               style={{
                 marginRight: rhythm(1 / 2),
                 marginBottom: 0,
-                width: rhythm(6)
+                width: rhythm(4)
               }}
             />
           </a>
