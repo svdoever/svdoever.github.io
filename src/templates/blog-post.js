@@ -9,6 +9,8 @@ import SEO from '../components/SEO'
 import { formatReadingTime } from '../utils/helpers'
 import { rhythm, scale } from '../utils/typography'
 
+import buyMeACoffeePic from '../components/bmc-button.png'
+
 const GITHUB_USERNAME = 'svdoever'
 const GITHUB_REPO_NAME = 'serge-weblog'
 
