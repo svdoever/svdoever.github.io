@@ -1,7 +1,7 @@
 ---
 title: The XM Cloud container - don't fiddle (too much) with it...
 published: true
-date: '2022-10-12'
+date: '2022-10-16'
 spoiler: A failed experiment to make a local XM Cloud development environment known to the outside world.
 description: XM Cloud dev env to outside world? It failed.
 tags: xmcloud, docker, sitecore
@@ -19,7 +19,7 @@ So time to dive into the Sitecore Docker world. But my goal is not to get my Sit
 
 ## Working with XM Cloud Docker scripts
 
-When I see colleagues working with Sitecore and Docker I see them tweaking and automate all kind of things on the Docker Compose setup, and their Dockerfile configurations to optimize their workflow. As described in my post [Local XM Cloud development](TODO) my starting point is the Docker configuration as provided by the project scafolder of XM Cloud, which provides a complete configuration for local XM Cloud development with all the familiar scripts, where the following, as a minimal quickstart, are the ones required to start working on XM Cloud locally:
+When I see colleagues working with Sitecore and Docker I see them tweaking and automate all kind of things on the Docker Compose setup, and their Dockerfile configurations to optimize their workflow. As described in my post [Local XM Cloud development](https://www.sergevandenoever.nl/Local_XM_Cloud_development/) my starting point is the Docker configuration as provided by the project scafolder of XM Cloud, which provides a complete configuration for local XM Cloud development with all the familiar scripts, where the following, as a minimal quickstart, are the ones required to start working on XM Cloud locally:
 
 `init.ps1` - configure your system for working with Docker Compose and XM Cloud - in a terminal window with Administrator rights execute the following command: 
 
@@ -41,7 +41,7 @@ Note that the location of your Sitecore license file and the administrator passw
 I have two reasons to try to make the XM Cloud container based environment accessible to the outside world:
 
 1. So I can build and deploy the head to Vercel (or any other external environment), and make it the rendering host for the locally running XM Cloud
-2. As described in my post [Local XM Cloud development](TODO) I was able to start the Pages editor, and I was wondering if Pages as a SaaS solution could be used to access my local XM Cloud development environment.
+2. As described in my post [Local XM Cloud development](https://www.sergevandenoever.nl/Local_XM_Cloud_development/) I was able to start the Pages editor, and I was wondering if Pages as a SaaS solution could be used to access my local XM Cloud development environment.
 
 My first step was to tunnel the website to the outside world. Because the CM container I want to open up to the outside world has a hostname (it is locally accessible on https://xmcloudcm.localhost, and not on something like http://localhost:3000) I can't use the free version of NGrok (the most well-known tunneling software), and the NGrok free version also does not allow you to use a self-picked subdomain name so the URL to the container will change on each restart.
 
