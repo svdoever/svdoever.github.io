@@ -1,7 +1,7 @@
 ---
 title: Running the XM Cloud SXA Starter on your local machine
 published: true
-date: '2022-10-12'
+date: '2022-10-18'
 spoiler: Sitecore Sitecore JavaScript Rendering SDK comes with a new headless SXA starter that is only useable for XM Cloud, no access to XM Cloud? No problem! Lets run it locally...
 description: XM Cloud locally with the headless SXA starter.
 tags: xmcloud, docker, sitecore
