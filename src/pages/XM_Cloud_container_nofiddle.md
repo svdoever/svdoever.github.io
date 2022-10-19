@@ -33,7 +33,7 @@ Note that the location of your Sitecore license file and the administrator passw
 
 `.\down.ps1` - with this script you bring the container-based Sitecore environment down, and your machine gives you back your memory, and selences the spinning fan sound to normal proportions.
 
-## Making local XM Cloud acessible to the outside world?!
+## Making local XM Cloud accessible to the outside world?!
 
 **NOTA-BENE: this is a failed experiment! - it does NOT work for XM Cloud, but there are some learnings in it, and it DOES work for normal Sitecore XM/XP Docker containers or any other container you want to make known to the outside world.
 **
