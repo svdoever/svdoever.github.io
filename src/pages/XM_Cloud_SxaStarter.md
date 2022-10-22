@@ -118,7 +118,7 @@ You will need to restart your terminal or VS Code for it to take effect.
 
 Now it is time to spin up the containers.
 
-`.\up.ps1` - the script to start Docker Compose and bring your complete container-based environment to live. Note that XM Cloud wants to connect to https://sitecorecloud.io to first confirm your device, and in a next step it authenticates your device at https://auth.sitecorecloud.io.
+`.\up.ps1` - the script to start Docker Compose and bring your complete container-based environment to live. Note that XM Cloud wants to connect to https://portal.sitecorecloud.io to first confirm your device, and in a next step it authenticates your device at https://auth.sitecorecloud.io.
 
 If you get an error like:
 ```
