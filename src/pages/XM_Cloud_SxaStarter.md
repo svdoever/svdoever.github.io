@@ -38,7 +38,7 @@ Do `cd xmcloud-sxa` to go to the new created folder. In this folder execute:
 
 Note that the location of your Sitecore license file and the administrator password that you choose may vary. After executing this command restart you terminal before executing the next command.
 
-The init command genersates the following output:
+The init command generates the following output:
 
 ```text
 Preparing your Sitecore Containers environment!
