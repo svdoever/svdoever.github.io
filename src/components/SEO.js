@@ -1,7 +1,9 @@
+import path from 'path'
 import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
+import profilePic from './profile-pic.jpg'
 
 const query = graphql`
   query GetSiteMetadata {
@@ -27,7 +29,8 @@ function SEO({ meta, image, title, description, slug }) {
       render={data => {
         const { siteMetadata } = data.site
         const metaDescription = description || siteMetadata.description
-        const metaImage = image ? `${siteMetadata.siteUrl}/${image}` : null
+        const metaImage = image ? `${siteMetadata.siteUrl}/${image}` : path.join(siteMetadata.siteUrl, profilePic)
+        console.log(metaImage)
         const url = `${siteMetadata.siteUrl}${slug}`
         return (
           <Helmet
@@ -62,6 +65,10 @@ function SEO({ meta, image, title, description, slug }) {
                 content: metaDescription,
               },
               {
+                name: 'og:image',
+                content: metaImage,
+              },
+              {
                 name: 'twitter:card',
                 content: 'summary',
               },
@@ -77,21 +84,11 @@ function SEO({ meta, image, title, description, slug }) {
                 name: 'twitter:description',
                 content: metaDescription,
               },
+              {
+                name: 'twitter:image',
+                content: metaImage,
+              },
             ]
-              .concat(
-                metaImage
-                  ? [
-                      {
-                        property: 'og:image',
-                        content: metaImage,
-                      },
-                      {
-                        name: 'twitter:image',
-                        content: metaImage,
-                      },
-                    ]
-                  : []
-              )
               .concat(meta)}
           />
         )

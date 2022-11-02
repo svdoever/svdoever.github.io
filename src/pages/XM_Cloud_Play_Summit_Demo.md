@@ -2,7 +2,7 @@
 title: XM Cloud Play! Summit demo
 published: true
 date: '2022-11-03'
-spoiler: The XM Cloud Play! Summit demo is similar to the Play! Summit demo as available in de Sitecore demo portal, but tailered for XM Cloud.
+spoiler: The XM Cloud Play! Summit demo is similar to the Play! Summit demo as available in de Sitecore demo portal, but tailered for XM Cloud. And in just a few command you can get it running on your local machine...
 description: XM Cloud Play! Summit demo!
 tags: xmcloud, sitecore
 canonical_url: https://www.sergevandenoever.nl/... - link for the canonical version of the content
