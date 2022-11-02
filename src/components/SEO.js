@@ -29,7 +29,11 @@ function SEO({ meta, image, title, description, slug }) {
       render={data => {
         const { siteMetadata } = data.site
         const metaDescription = description || siteMetadata.description
-        const metaImage = image ? `${siteMetadata.siteUrl}/${image}` : path.join(siteMetadata.siteUrl, profilePic)
+        const metaImage = image
+          ? image.startsWith('http')
+            ? image 
+            : path.join(siteMetadata.siteUrl, image) 
+          : path.join(siteMetadata.siteUrl, profilePic)
         console.log(metaImage)
         const url = `${siteMetadata.siteUrl}${slug}`
         return (
@@ -51,6 +55,10 @@ function SEO({ meta, image, title, description, slug }) {
               {
                 name: 'description',
                 content: metaDescription,
+              },
+              {
+                property: 'og:type',
+                content: 'blog',
               },
               {
                 property: 'og:url',
