@@ -69,11 +69,11 @@ function SEO({ meta, image, title, description, slug }) {
                 content: title || siteMetadata.title,
               },
               {
-                name: 'og:description',
+                property: 'og:description',
                 content: metaDescription,
               },
               {
-                name: 'og:image',
+                property: 'og:image',
                 content: metaImage,
               },
               {
