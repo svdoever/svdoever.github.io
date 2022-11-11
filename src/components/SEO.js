@@ -34,7 +34,6 @@ function SEO({ meta, image, title, description, slug }) {
             ? image 
             : path.join(siteMetadata.siteUrl, image) 
           : path.join(siteMetadata.siteUrl, profilePic)
-        console.log(metaImage)
         const url = `${siteMetadata.siteUrl}${slug}`
         return (
           <Helmet

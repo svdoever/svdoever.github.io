@@ -27,6 +27,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
+          image={post.frontmatter.image || null}
           title={post.frontmatter.title}
           description={post.frontmatter.spoiler}
           slug={post.fields.slug}
