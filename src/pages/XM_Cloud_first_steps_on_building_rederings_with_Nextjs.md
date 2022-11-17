@@ -115,6 +115,8 @@ Minions... wasn't that a Commerce thing?!
 
 ---
 
+## Create the rendering in XM Cloud
+
 Next step is to create a new rendering in the Content Editor, and set the **Component Name** to the name of the component file, e.g. `SergeText`:
 
 ![](XM_Cloud_first_steps_on_building_rederings_with_Nextjs/r3o45pmc3453.png)
@@ -142,6 +144,8 @@ And as a bonus make it compatible with the `Rich Text` rendering:
 This not-so-simple registration of the rendering makes the rendering appear in the **Components** toolbox:
 
 ![](XM_Cloud_first_steps_on_building_rederings_with_Nextjs/r3o51pmc3513.png)
+
+## Trouble
 
 But when I dragged the component on the `Home` page... boom!
 
@@ -267,6 +271,8 @@ Error: Request failed with status code 500
 
 In short: `TypeError: Cannot read properties of undefined (reading 'trimEnd') at SergeText_Default`
 
+## Solving the trouble
+
 My `Default` variant component in `SergeText.tsx` does contain indeed a trimEnd() function (copied from `RichText.tsx`) which isn't programmed very defensive:
 
 ![](XM_Cloud_first_steps_on_building_rederings_with_Nextjs/r4o14amc4144.png)
@@ -284,11 +290,11 @@ After a rebuild the `Home` page now works correctly, and shows the Serge Text fi
 
 ![](XM_Cloud_first_steps_on_building_rederings_with_Nextjs/r4o20amc4204.png)
 
-Strange thing is that if I remove the component and drag it on the page again, I don't get the same experience as the `Rich Text` component where a datasource is automatically created (like we configured on `Serge Text` as well), but I'm presented with an "Assign content item" popup with the locartions where I can create the datasource:
+Strange thing is that if I remove the component and drag it on the page again, I don't get the same experience as the `Rich Text` component where a datasource is automatically created (like we configured on `Serge Text` as well), but I'm presented with an "Assign content item" popup with the locations where I can create the datasource:
 
 ![](XM_Cloud_first_steps_on_building_rederings_with_Nextjs/r4o7amc474.png)
 
-And when I select `Data` (as the `Data` folder under the page I'm editing):
+And when I select `Data` (this is the `Data` folder under the page I'm editing):
 
 ![](XM_Cloud_first_steps_on_building_rederings_with_Nextjs/r4o9amc494.png)
 
@@ -328,7 +334,7 @@ And now under **Advanced Styling** you can select the rendering variants:
 
 ![](XM_Cloud_first_steps_on_building_rederings_with_Nextjs/r4o35amc4354.png)
 
-If I specify that `Serge Text` rendering is compatible with `Richt Text` rendering, I don't see any option in Pages to replace the `Serge Text` rendering with the `Rich Text` variant, while there does appear a button to replace the rendering with a compatible rendering in the good old Experience Editor:
+If I specify that `Serge Text` rendering is compatible with `Rich Text` rendering, I don't see any option in Pages to replace the `Serge Text` rendering with the `Rich Text` variant, while there does appear a button to replace the rendering with a compatible rendering in the good old Experience Editor:
 
 ![](XM_Cloud_first_steps_on_building_rederings_with_Nextjs/r4o45amc4454.png)
 
