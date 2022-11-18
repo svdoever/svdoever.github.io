@@ -86,7 +86,7 @@ I personally prefer a wider `printWidth` because I always work on wide monitors 
 
 If you change settings in `src/sxastarter/.prettierrc` you might need to reformat all your code or you could get a lint errors because the linter `ESLint` uses the `prettier` plugin to validate the code.
 
-If you dare you can add the following line to you `package.json` and run `npm run prettier` to reformat all cone files:
+If you dare you can add the following line to you `package.json` scripts section and run `npm run prettier` to reformat all code files:
 
 ```json
 "prettier": "prettier --write ./src/**/*.tsx ./src/**/*.ts ./scripts/**/*.ts"
