@@ -14,8 +14,8 @@ XM Cloud comes with headless SXA, and supports the good old JSS way of building 
 But first the code for my component with the two variants:
 
 ```typescript
-import React from 'react';
-import { Field, RichText as JssRichText } from '@sitecore-jss/sitecore-jss-nextjs';
+import React from "react";
+import { Field, RichText as JssRichText } from "@sitecore-jss/sitecore-jss-nextjs";
 
 interface Fields {
   Text: Field<string>;
@@ -29,8 +29,7 @@ export type SergeTextProps = {
 export const Default = (props: SergeTextProps): JSX.Element => {
   const text = props.fields ? (
     <span>
-      SERGE:
-      <JssRichText field={props.fields.Text} />
+      SERGE: <JssRichText field={props.fields.Text} />
     </span>
   ) : (
     <span className="is-empty-hint">Rich text</span>
@@ -38,10 +37,7 @@ export const Default = (props: SergeTextProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
 
   return (
-    <div
-      className={`component rich-text ${props.params.styles.trimEnd()}`}
-      id={id ? id : undefined}
-    >
+    <div className={`component rich-text ${props.params.styles.trimEnd()}`} id={id ? id : undefined}>
       <div className="component-content">
         SERGE: <span>{text}</span>
       </div>
@@ -60,10 +56,7 @@ export const MoreSerge = (props: SergeTextProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
 
   return (
-    <div
-      className={`component rich-text ${props.params.styles.trimEnd()}`}
-      id={id ? id : undefined}
-    >
+    <div className={`component rich-text ${props.params.styles.trimEnd()}`} id={id ? id : undefined}>
       <div className="component-content">
         MORE SERGE: <span>{text}</span>
       </div>
@@ -72,7 +65,48 @@ export const MoreSerge = (props: SergeTextProps): JSX.Element => {
 };
 ```
 
+## Formatting and Prettier
+
 First issue that I encountered was that when I do a build, it return [Prettier](https://prettier.io/) errors. Prettier is an opinionated code formatter, so I installed the Visual Studio code [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and used the `Format Document` (Shift+Alt+F) command to do the formatting for me.
+
+An pointed out by [Justin Vogt](https://www.linkedin.com/in/justinvogt/) on [Sitecore Slack](https://sitecorechat.slack.com/archives/C03NXTAPKE3/p1668698399241099) you can change the Prettier settings in `src/sxastarter/.prettierrc`:
+
+```json
+{
+  "endOfLine": "crlf",
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "printWidth": 100
+}
+```
+
+I personally prefer a wider `printWidth` because I always work on wide monitors (160 for example), and `singleQuote` set to `false`, because the single quote ' and the back-tick for template string \` are too similar for me. But **DON'T** change this setting, because there are scripts that generate files in the `temp` folder (like `temp/componentFactory.ts`), and these scripts are generated with single quotes.
+
+If you change settings in `src/sxastarter/.prettierrc` you might need to reformat all your code or you could get a lint errors because the linter `ESLint` uses the `prettier` plugin to validate the code.
+
+If you dare you can add the following line to you `package.json` and run `npm run prettier` to reformat all cone files:
+
+```json
+"prettier": "prettier --write ./src/**/*.tsx ./src/**/*.ts ./scripts/**/*.ts"
+```
+
+## Linting and ESLint
+
+The other thing that Justin pointed out was linting. The lint command executed in an XM Cloud build is specified by the `lintCommand` in `xmcloud.build.json`:
+
+![](XM_Cloud_first_steps_on_building_rederings_with_Nextjs/r5o50pmc5505.png)
+
+the `lintCommand` maps to an npm script defined in the `package.json` file in the folder `./src/sxastarter` as defined in the `path` setting (`renderingHosts.xmcloudpreview.path`) in `xmcloud.build.json`:
+
+![](XM_Cloud_first_steps_on_building_rederings_with_Nextjs/r5o55pmc5555.png)
+
+Justin pointed out that linting can be disabled by blanking the `lintCommand`, but I strongly suggest not to do this - code quality is an important thing in a project. Just run `npm run lint` in the folder `./src/sxastarter` (or your own named folder for the code of the "head") before committing your code, so you are sure you will not get lint errors during the XM Cloud build. Note that `npm run build` executes the linting as well.
+
+I do a lot of front-end development in the React space, so for me this is all like sliced bread, but with people comming from the Visual Studio/C#/Microsoft space I often see fear and terror in their eyes:-) Just get used to it... It is just like NuGet packages and opening up `.csproj` files... 
+
+## Back to the build again
 
 When I do a build again, I get the error `Invalid GraphQL endpoint '/sitecore/api/graph/edge'. Verify that 'layoutServiceHost' property in 'scjssconfig.json' file or appropriate environment variable is set`.
 
