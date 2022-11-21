@@ -1,5 +1,5 @@
 ---
-title: XM Cloud rendering host options and fast local development with Pages and to containers
+title: XM Cloud rendering host options and fast local development with Experience Editor & Pages
 published: true
 date: '2022-11-21'
 spoiler: XM Cloud comes with an out-of-the-box internal rendering host. Deployment to this host is slow. Lets use a locally running rendering host, and expose it to the outside world using a reverse-proxy so the Experience Editor and Pages can work with the rendering host on your dev box.
