@@ -103,8 +103,9 @@ You can now execute the following steps:
 
 5. Start your local rendering host in the folder `src/sxastarter`, e.g. `npm run start:connected`
 6. To keep things simple we run **localtunnel** with a subdomain that is the same name as your internal rendering host, in my case `lt --port 3000 --subdomain xmc-59qqzdup3uinohoazx4prn` - this results in an externally accessible site proxying to http://localhost:3000 with the URL https://xmc-59qqzdup3uinohoazx4prn.loca.lt
-7.  Open the site, in my case https://xmc-59qqzdup3uinohoazx4prn.loca.lt - it can be that there is a proceed button you need to click
-8.  In the **Content Editor** we can now switch between the **internal** rendering host configuration and the **local** rendering host configuration on the `Site Grouping` settings of your site:
+7.  Open the site, in my case https://xmc-59qqzdup3uinohoazx4prn.loca.lt - it can be that there is a **Click to Continue** button you need to click first. When not clicked a blank page will be shown **Experience Editor** and **Pages**:
+  ![](XM_Cloud_rendering_host_options_and_fast_local_development/r1o52pmc1521.png)
+9.  In the **Content Editor** we can now switch between the **internal** rendering host configuration and the **local** rendering host configuration on the `Site Grouping` settings of your site:
     ![](XM_Cloud_rendering_host_options_and_fast_local_development/r1o51pmc1511.png)
 
 When needed additional rendering host configurations can be added as well, like for example a Vercel deployed rendering host.
