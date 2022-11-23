@@ -1,6 +1,6 @@
 ---
 title: XM Cloud - but what about search?
-published: true
+published: false
 date: '2022-11-03'
 spoiler: XM Cloud - but what about search?
 description: XM Cloud is cool - but with Experience Edge we loose the possibility to use Solr search on the CD server... 

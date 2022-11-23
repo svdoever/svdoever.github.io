@@ -2,8 +2,8 @@
 title: XM Cloud rendering host options and fast local development with Experience Editor & Pages
 published: true
 date: '2022-11-21'
-spoiler: XM Cloud comes with an out-of-the-box internal rendering host. Deployment to this host is slow. Lets use a locally running rendering host, and expose it to the outside world using a reverse-proxy so the Experience Editor and Pages can work with the rendering host on your dev box.
-description: XM Cloud comes with an out-of-the-box internal rendering host. Deployment to this host is slow. Lets use a locally running rendering host, and expose it to the outside world using a reverse-proxy so the Experience Editor and Pages can work with the rendering host on your dev box.
+spoiler: XM Cloud comes with an out-of-the-box internal rendering host. Deployment to this host is currently slow (Sitecore is working on decoupling Editing Host builds/deployments from CM builds/deployments so that Editing Host builds/deployments are fast). Lets use a locally running rendering host, and expose it to the outside world using a reverse-proxy so the Experience Editor and Pages can work with the rendering host on your dev box.
+description: XM Cloud comes with an out-of-the-box internal rendering host. Deployment to this host is currently slow (Sitecore is working on decoupling Editing Host builds/deployments from CM builds/deployments so that Editing Host builds/deployments are fast). Lets use a locally running rendering host, and expose it to the outside world using a reverse-proxy so the Experience Editor and Pages can work with the rendering host on your dev box.
 image: external image URL, starting with https://
 tags: xmcloud, SXA, headless
 canonical_url: https://www.sergevandenoever.nl/... - link for the canonical version of the content
@@ -27,7 +27,7 @@ The code for the editing host and the components are in the `sxastarter` folder 
 
 Important to know is that this out-of-the-box editing host only works with a Sitecore JavaScript Services (JSS) based website, and not with an ASP.NET built with the [Sitecore ASP.NET Rendering SDK](https://doc.sitecore.com/xp/en/developers/hd/201/sitecore-headless-development/sitecore-asp-net-rendering-sdk.html).
 
-This process of code-change, commit, push, build, and deploy for using the internal out-of-the-box editing host is a lengthy process, and therefore not useful for a fast development cycle.
+This process of code-change, commit, push, build, and deploy for using the internal out-of-the-box editing host is a lengthy process, because both the editing host and the CM deployment are both done, resulting in creating and deploying containers, and always a complete coldstart of the complete environment. Therefor, using the internal editing host is currently not useful for a fast development cycle. Sitecore is working on decoupling editing Host builds/deployments from CM builds/deployments so that editing Host builds/deployments are fast and don't require a cold start of the complete CM environment. But for a real fast development cycle in the editing host nothing can beat local development.
 
 ## Local development with Docker containers
 
