@@ -10,7 +10,7 @@ cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
 
-In my post [Running the XM Cloud SXA Starter on your local machine](https://www.sergevandenoever.nl/XM_Cloud_SxaStarter/) I showed how you can experiment with XM Cloud on you local machine using Docker containers, wiyjout having access to an organization in the [Sitecore Cloud portal](https://porta.sitecorecloud.io). Good to have a glimpse to that post before continuing here so you know what to expect. Although the setup of the **Play! Summit** demo app is even easier!
+In my post [Running the XM Cloud SXA Starter on your local machine](https://www.sergevandenoever.nl/XM_Cloud_SxaStarter/) I showed how you can experiment with XM Cloud on you local machine using Docker containers, without having access to an organization in the [Sitecore Cloud portal](https://portal.sitecorecloud.io). Good to have a glimpse to that post before continuing here so you know what to expect. Although the setup of the **Play! Summit** demo app is even easier!
 
 Next to the repository I used in the above post (the SXA Starter template repository), there is also the [Play! Summit for XM Cloud](https://github.com/sitecorelabs/Sitecore.Demo.XmCloud.PlaySummit) repository.
 
