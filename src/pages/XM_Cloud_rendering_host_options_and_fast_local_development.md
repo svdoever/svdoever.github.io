@@ -128,7 +128,7 @@ So the code will look like:
 
 ![](XM_Cloud_rendering_host_options_and_fast_local_development/r5o15pmc5155.png)
 
-## Fixing the missing CDP_CLIENT_KEY issue
+## Fixing the missing CDP\_CLIENT\_KEY issue
 
 NOTA BENE: See the UPDATE at the end of this section for retrieving the required settings.
 
