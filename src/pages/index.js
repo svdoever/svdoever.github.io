@@ -39,13 +39,13 @@ class BlogIndex extends React.Component {
                 </Link>
               </h3>
               <small>
-                {node.frontmatter.date}
+                {(new Date(node.frontmatter.date)).toDateString()}
                 {` • ${formatReadingTime(node.timeToRead)}`}
               </small>
               <p
                 dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}
               />
-            </div>
+            </div> 
           )
         })}
         <Footer />
@@ -72,7 +72,7 @@ export const pageQuery = graphql`
           }
           timeToRead
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date
             title
             spoiler
           }

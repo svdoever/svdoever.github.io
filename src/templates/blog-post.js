@@ -41,7 +41,7 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          {post.frontmatter.date}
+          {(new Date(post.frontmatter.date)).toDateString()}
           {` • ${formatReadingTime(post.timeToRead)}`}
           <br/>
           If you like my writing
@@ -134,7 +134,7 @@ export const pageQuery = graphql`
       timeToRead
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date
         spoiler
       }
       fields {
