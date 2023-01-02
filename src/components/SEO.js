@@ -57,7 +57,7 @@ function SEO({ meta, image, title, description, slug }) {
               },
               {
                 property: 'og:type',
-                content: 'blog',
+                content: 'article',
               },
               {
                 property: 'og:url',
@@ -74,6 +74,10 @@ function SEO({ meta, image, title, description, slug }) {
               {
                 property: 'og:image',
                 content: metaImage,
+              },
+              {
+                property: 'og:image:type',
+                content: metaImage.endsWith('jpg') ? 'image/jpeg' : 'image/png',
               },
               {
                 name: 'twitter:card',
