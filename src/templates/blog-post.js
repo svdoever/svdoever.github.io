@@ -46,6 +46,7 @@ class BlogPostTemplate extends React.Component {
         >
           {(new Date(post.frontmatter.date)).toDateString()}
           {` • ${formatReadingTime(post.timeToRead)}`}
+          {` • you like my writing? `}<a href='https://www.paypal.com/donate/?business=RQKF5AEJP7XSQ&no_recurring=0&item_name=Like+my+writings?+Buy+me+a+coffee%21&currency_code=EUR' target='_blank'>Buy me a coffee</a>
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <p>
