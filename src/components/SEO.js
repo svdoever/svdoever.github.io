@@ -22,7 +22,7 @@ const query = graphql`
   }
 `
 
-function SEO({ meta, image, title, description, slug }) {
+function SEO({ meta, title, date, spoiler, description, image, tags, slug }) {
   return (
     <StaticQuery
       query={query}
@@ -111,15 +111,22 @@ function SEO({ meta, image, title, description, slug }) {
 SEO.defaultProps = {
   meta: [],
   title: '',
+  spoiler: '',
+  description: '',
+  image: '',
+  tags: [],
   slug: '',
 }
 
 SEO.propTypes = {
+  meta: PropTypes.array,
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  spoiler: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  meta: PropTypes.array,
+  tags: PropTypes.array,
   slug: PropTypes.string,
-  title: PropTypes.string.isRequired,
 }
 
 export default SEO

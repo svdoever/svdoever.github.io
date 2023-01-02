@@ -27,9 +27,12 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          image={post.frontmatter.image || null}
           title={post.frontmatter.title}
-          description={post.frontmatter.spoiler}
+          date={post.frontmatter.date}
+          spoiler={post.frontmatter.spoiler}
+          description={post.frontmatter.description || post.excerpt}
+          image={post.frontmatter.image || null}
+          tags={post.frontmatter.tags || null}
           slug={post.fields.slug}
         />
         <h1>{post.frontmatter.title}</h1>
@@ -136,6 +139,9 @@ export const pageQuery = graphql`
         title
         date
         spoiler
+        description
+        image
+        tags
       }
       fields {
         slug
