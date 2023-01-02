@@ -120,8 +120,8 @@ SEO.defaultProps = {
 
 SEO.propTypes = {
   meta: PropTypes.array,
-  title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  date: PropTypes.string,
   spoiler: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,

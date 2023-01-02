@@ -37,7 +37,7 @@ class Bio extends React.Component {
           Competence Team Lead Custom Application Development @ Macaw<br />
           2022 Technology Sitecore Most Valuable Professional<br />
           2021 Technology Sitecore Most Valuable Professional<br />
-          <hr />
+          <br />
           If you like my writing<br/>
           <a href='https://www.paypal.com/donate/?business=RQKF5AEJP7XSQ&no_recurring=0&item_name=Like+my+writings?+Buy+me+a+coffee%21&currency_code=EUR' target='_blank'>
             <img
