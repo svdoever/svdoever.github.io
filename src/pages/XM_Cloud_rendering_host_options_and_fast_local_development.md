@@ -4,7 +4,7 @@ published: true
 date: '2022-11-21'
 spoiler: XM Cloud comes with an out-of-the-box internal rendering host. Deployment to this host is currently slow (Sitecore is working on decoupling Editing Host builds/deployments from CM builds/deployments so that Editing Host builds/deployments are fast). Lets use a locally running rendering host, and expose it to the outside world using a reverse-proxy so the Experience Editor and Pages can work with the rendering host on your dev box.
 description: XM Cloud comes with an out-of-the-box internal rendering host. Deployment to this host is currently slow (Sitecore is working on decoupling Editing Host builds/deployments from CM builds/deployments so that Editing Host builds/deployments are fast). Lets use a locally running rendering host, and expose it to the outside world using a reverse-proxy so the Experience Editor and Pages can work with the rendering host on your dev box.
-image: https://ibb.co/Y7QpvVM
+image: https://i.ibb.co/5W4BqJy/local-dev-against-cm-excalidraw.png
 tags: xmcloud, SXA, headless
 canonical_url: https://www.sergevandenoever.nl/... - link for the canonical version of the content
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
