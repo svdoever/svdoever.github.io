@@ -5,8 +5,8 @@ date: '2023-01-07'
 spoiler: XM Cloud is a cloud environment we would like to automate against using PowerShell. In this blog post, I explain how to enable the PowerShell ISE and configure your XM Cloud environment for PowerShell remoting.
 description: XM Cloud is a cloud environment we would like to automate against using PowerShell. In this blog post, I explain how to enable the PowerShell ISE and configure your XM Cloud environment for PowerShell remoting.
 image: https://i.ibb.co/W6Fx8vk/Power-Shell-in-the-cloud.png
-tags: xm-cloud, poqwershell, remoting
-canonical_url: https://www.sergevandenoever.nl/... - link for the canonical version of the content
+tags: xmcloud, powershell, remoting
+canonical_url: https://www.sergevandenoever.nl/XM_Cloud_PowerShell_And_Remoting/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
@@ -71,7 +71,7 @@ But I don't understand how to configure it for the dev environment only, have ot
 
 So for now I created a file `C:\p\AcmeXMCloud-latest\src\platform\App_Config\Include\zzz\zzz_all.config` with the required configuration changes that I want.
 
-There is a good reason why I create all configuration changes in a single file. I have a neat trick to apply these changes directly in the PowerShell ISE so I don't have to do a build and deploy, and can test my changes in a matter of seconds, instead of waiting 10+ minutes. But more on that in a later blog post.
+There is a good reason why I create all configuration changes in a single file. I have a neat trick to apply these changes directly in the PowerShell ISE so I don't have to do a build and deploy, and can test my changes in a matter of seconds, instead of waiting 10+ minutes. See the blog post [XM Cloud - use PowerShell ISE to test configuration changes](https://www.sergevandenoever.nl/Sitecore_XM_using_PowerShell_ISE_to_test_configurations/) for more information.
 
 Make sure that the file is correctly in the Visual Studio tree. Otherwise, it will not be correctly deployed in the build and deploy:
 
@@ -144,7 +144,7 @@ And use the following configuration, based on [ShieldsDown.config for Sitecore P
 
 Note the use of environment variables through `$(env:host)` and `$(env:SPE_SharedSecret)`, so required values are not in the configuration files and we have a clean code repository.
 
-A build and deploy is needed to apply the configuration changes. For quick testing of configuration changes you can also use the trick that I will describe in a next blog post so you can apply changes instantly through the PowerShell ISE.
+A build and deploy is needed to apply the configuration changes. For quick testing of configuration changes, you can also use the trick that I describe in a the blog post [XM Cloud - use PowerShell ISE to test configuration changes](https://www.sergevandenoever.nl/Sitecore_XM_using_PowerShell_ISE_to_test_configurations/) so you can apply changes instantly through the PowerShell ISE.
 
 ## Testing PowerShell remoting
 

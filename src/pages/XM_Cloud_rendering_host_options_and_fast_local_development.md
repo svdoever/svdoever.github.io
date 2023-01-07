@@ -6,7 +6,7 @@ spoiler: XM Cloud comes with an out-of-the-box internal rendering host. Deployme
 description: XM Cloud comes with an out-of-the-box internal rendering host. Deployment to this host is currently slow (Sitecore is working on decoupling Editing Host builds/deployments from CM builds/deployments so that Editing Host builds/deployments are fast). Lets use a locally running rendering host, and expose it to the outside world using a reverse-proxy so the Experience Editor and Pages can work with the rendering host on your dev box.
 image: https://i.ibb.co/5W4BqJy/local-dev-against-cm-excalidraw.png
 tags: xmcloud, SXA, headless
-canonical_url: https://www.sergevandenoever.nl/... - link for the canonical version of the content
+canonical_url: https://www.sergevandenoever.nl/XM_Cloud_rendering_host_options_and_fast_local_development/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
@@ -27,7 +27,7 @@ The code for the editing host and the components are in the `sxastarter` folder 
 
 Important to know is that this out-of-the-box editing host only works with a Sitecore JavaScript Services (JSS) based website, and not with an ASP.NET built with the [Sitecore ASP.NET Rendering SDK](https://doc.sitecore.com/xp/en/developers/hd/201/sitecore-headless-development/sitecore-asp-net-rendering-sdk.html).
 
-This process of code-change, commit, push, build, and deploy for using the internal out-of-the-box editing host is a lengthy process, because both the editing host and the CM deployment are both done, resulting in creating and deploying containers, and always a complete coldstart of the complete environment. Therefor, using the internal editing host is currently not useful for a fast development cycle. Sitecore is working on decoupling editing Host builds/deployments from CM builds/deployments so that editing Host builds/deployments are fast and don't require a cold start of the complete CM environment. But for a real fast development cycle in the editing host nothing can beat local development.
+This process of code-change, commit, push, build, and deployment for using the internal out-of-the-box editing host is a lengthy process because both the editing host and the CM deployment are done, resulting in creating and deploying containers, and always a cold start of the complete environment. Therefore, using the internal editing host is currently not useful for a fast development cycle. Sitecore is working on decoupling editing Host builds/deployments from CM builds/deployments so that editing Host builds/deployments are fast and don't require a cold start of the complete CM environment. But for a really fast development cycle in the editing host nothing can beat local development.
 
 ## Local development with Docker containers
 
@@ -108,7 +108,7 @@ You can now execute the following steps:
 9.  In the **Content Editor** we can now switch between the **internal** rendering host configuration and the **local** rendering host configuration on the `Site Grouping` settings of your site:
     ![](XM_Cloud_rendering_host_options_and_fast_local_development/r1o51pmc1511.png)
 
-When needed additional rendering host configurations can be added as well, like for example a Vercel deployed rendering host.
+When needed additional rendering host configurations can be added as well like for example a Vercel-deployed rendering host.
 
 Note that if **localtunnel** is not running anymore, an error is given in **Experience Editor** and **Pages**:
 
@@ -124,15 +124,13 @@ As described in my blog post [Running the XM Cloud SXA Starter on your local mac
 
 ![](XM_Cloud_rendering_host_options_and_fast_local_development/r5o13pmc5135.png)
 
-So the code will look like:
+So the code will look like this:
 
 ![](XM_Cloud_rendering_host_options_and_fast_local_development/r5o15pmc5155.png)
 
 ## Fixing the missing CDP\_CLIENT\_KEY issue
 
-NOTA BENE: See the UPDATE at the end of this section for retrieving the required settings.
-
-Next you will be greeted with the following error:
+NOTA BENE: See the UPDATE at the end of this section for retrieving the required settings.Next, you will be greeted with the following error:
 
 ![](XM_Cloud_rendering_host_options_and_fast_local_development/r6o36amc6366.png)
 
@@ -149,9 +147,7 @@ Commenting out the `CdpPageView` component is not a very sustainable solution, b
 UPDATE:
 
 If you open **Pages**, press F-12 for the developer tools, and filter the network tab on `create.json` you will see:
-![](XM_Cloud_rendering_host_options_and_fast_local_development/r0o16pmc0160.png)
-
-In the screenshot you will see that the required client key is visible.
+In the screenshot, you will see that the required client key is visible.
 
 in `env.local` set:
 - `NEXT_PUBLIC_CDP_TARGET_URL=https://api.boxever.com`
@@ -165,4 +161,4 @@ If you selected the local editing host configuration (e.g. `SergeFirst_local`) a
 
 When the **localtunnel** is stopped you will see an error in the **Experience Editor** or **Pages**. Change the **selected predefined application rendering host** of the **Site Groupings** settings of your site back to the internal rendering host and you will use the out-of-the-box internal editing host again.
 
-I would like to thank Andy Cohen and Sebastian Winter from Sitecore from their help in getting this setup working. 
+I would like to thank Andy Cohen and Sebastian Winter from Sitecore for their help in getting this setup working. 

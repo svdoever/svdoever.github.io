@@ -5,8 +5,8 @@ date: '2023-01-08'
 spoiler: Sitecore XM and its cloud sister XM Cloud can be completely tailored through configuration files. But especially on XM Cloud testing out configuration changes is a lengthy process (10+ minutes) because a build and deploy is required to see the changes. In this blog post I will describe how I test configuration changes in just seconds.
 description: Sitecore XM and its cloud sister XM Cloud can be completely tailored through configuration files. But especially on XM Cloud testing out configuration changes is a lengthy process (10+ minutes) because a build and deploy is required to see the changes. In this blog post I will describe how I test configuration changes in just seconds.
 image: https://i.ibb.co/FnWFx2v/A-configuration-file-patched-in-the-cloud.png
-tags: xm-cloud, powershell, configuration
-canonical_url: https://www.sergevandenoever.nl/... - link for the canonical version of the content
+tags: xmcloud, powershell, configuration
+canonical_url: https://www.sergevandenoever.nl/Sitecore_XM_using_PowerShell_ISE_to_test_configurations/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
