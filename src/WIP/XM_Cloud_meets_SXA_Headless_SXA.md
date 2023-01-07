@@ -9,4 +9,14 @@ cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
 
-Text of blog post.
+When creating a new tenant, e.g. `HeadlessHeadstart`, a folder is created called `/sitecore/templates/Project/HeadlessHeadstart`.
+Within this folder, a standard set of subfolders is created:
+
+- `Headless Site`
+- `Headless Tenant`
+- `JSS Settings`
+- `Page`
+- `Page Design Folder`
+- `Page Designs`
+- `Partial Design Folder`
+- `Partial Designs`
