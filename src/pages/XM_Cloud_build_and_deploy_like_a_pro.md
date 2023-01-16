@@ -6,7 +6,7 @@ spoiler: XM Cloud Deploy has a web UI with some great features to start a build 
 description: XM Cloud Deploy has a web UI with some great features to start a build and deploy, monitor the progress, and inspect the log files. But it also has some drawbacks. In this blog post, I will describe these drawbacks and show how to improve the workflow.
 image: https://i.ibb.co/KzpYWLT/logs-falling-from-the-clouds.png
 tags: xmcloud, powershell, build, deploy
-canonical_url: https://www.sergevandenoever.nl/... - link for the canonical version of the content
+canonical_url: https://www.sergevandenoever.nl/XM_Cloud_build_and_deploy_like_a_pro/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
@@ -234,3 +234,22 @@ Write-Host $stagesResult
 ```
 
 Let me know if you see any improvements for these scripts, for me they do the job.
+
+## Troubleshooting
+
+If you get an error like:
+
+```
+C:\p\AcmeXMCloud-latest [main ≡ +6 ~3 -0 !]> .\tools\buildanddeploy.ps1
+Organization: macaw
+Project: AcmeXMCloud
+C:\p\AcmeXMCloud-latest\tools\buildanddeploy.ps1 : Project 'AcmeXMCloud' not found in organization 'macaw'.
+```
+
+Do a login using the Sitecore CLI:
+
+```
+dotnet sitecore cloud login
+```
+
+And approve in the opened browser window.
