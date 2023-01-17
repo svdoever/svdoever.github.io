@@ -6,7 +6,7 @@ spoiler: I would like to work with the latest version of the Sitecore CLI and it
 description: I would like to work with the latest version of the Sitecore CLI and its plugins, but upgrading to it is not that easy... In this blog post, you will learn how to find the version of the Sitecore CLI and its plugins, and how to upgrade them.
 image: https://i.ibb.co/WkpTsT3/Upgrade-commanline-in-the-cloud.png
 tags: sitecore, xmlcloud, cli
-canonical_url: https://www.sergevandenoever.nl/... - link for the canonical version of the content
+canonical_url: https://www.sergevandenoever.nl/XM_Cloud_and_Sitecore_CLI_version/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
@@ -31,7 +31,7 @@ Which results in:
 
 So the version is 5.0.15. 
 
-You can also retrieve the verions of the installed list of plugins using the command:
+You can also retrieve the versions of the installed list of plugins using the command:
 
 ```
 dotnet sitecore plugin list
