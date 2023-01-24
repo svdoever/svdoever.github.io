@@ -144,6 +144,11 @@ Write-Host "Project: $projectName"
 $projectList = dotnet sitecore cloud project list --json | ConvertFrom-Json
 $project = $projectList | Where-Object { $_.name -eq $projectName }
 if (-not $project) {
+    dotnet sitecore cloud login # maybe not authenticated?
+    $projectList = dotnet sitecore cloud project list --json | ConvertFrom-Json
+    $project = $projectList | Where-Object { $_.name -eq $projectName }
+}
+if (-not $project) {
     Write-Error "Project '$projectName' not found in organization '$organizationName'."
 }
 $projectId = $project.id
@@ -165,6 +170,10 @@ Write-Host "Environment provisioning status: $($environment.provisioningStatus)"
 
 Write-Host "Creating and uploading a deployment package..." -NoNewline
 $deployment = dotnet sitecore cloud deployment create --environment-id $environmentId --working-dir . --upload --no-watch --no-start --json | ConvertFrom-Json
+if ($deployment.Status -eq "Operation Failed") {
+    Write-Host ""
+    Write-Error "Creation of deployment failed: $($deployment.Message)"
+}
 Write-Host " done."
 $deploymentId = $deployment.id
 Write-Host "Deployment is provisioned and queued. Deployment id: $deploymentId"
@@ -252,4 +261,4 @@ Do a login using the Sitecore CLI:
 dotnet sitecore cloud login
 ```
 
-And approve in the opened browser window.
+And approve in the opened browser window. I also updated the scripts above to do this automatically where possible.
