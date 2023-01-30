@@ -2,11 +2,11 @@
 title: XM Cloud - stay in sync with the headstart
 published: true
 date: '2023-01-30'
-spoiler: Headstarts are a great way to jumpstart your project, but how do you stay in sync with the headstart, or how can you harvest from your project implementation back to your headstart?
-description: Headstarts are a great way to jumpstart your project, but how do you stay in sync with the headstart, or how can you harvest from your project implementation back to your headstart?
+spoiler: A new XM Cloud project is scaffolded from a headstart provided by Sitecore. But how do you stay in sync with that headstart in case Sitecore decides to fix issues or include innovations? In this post, I will describe how we do this in general when starting from a headstart.  
+description: A new XM Cloud project is scaffolded from a headstart provided by Sitecore. But how do you stay in sync with that headstart in case Sitecore decides to fix issues or include innovations? In this post, I will describe how we do this in general when starting from a headstart.
 image: https://i.ibb.co/qk6TMb4/different-colors-of-clouds-merging-over-the-surface-of-the-earth.png
 tags: max of four tags, needs to be comma-separated
-canonical_url: https://www.sergevandenoever.nl/... - link for the canonical version of the content
+canonical_url: https://www.sergevandenoever.nl/XM_Cloud_stay_in_sync_with_the_headstart/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
