@@ -5,7 +5,7 @@ date: '2023-01-30'
 spoiler: A new XM Cloud project is scaffolded from a headstart provided by Sitecore. But how do you stay in sync with that headstart in case Sitecore decides to fix issues or include innovations? In this post, I will describe how we do this in general when starting from a headstart.  
 description: A new XM Cloud project is scaffolded from a headstart provided by Sitecore. But how do you stay in sync with that headstart in case Sitecore decides to fix issues or include innovations? In this post, I will describe how we do this in general when starting from a headstart.
 image: https://i.ibb.co/qk6TMb4/different-colors-of-clouds-merging-over-the-surface-of-the-earth.png
-tags: max of four tags, needs to be comma-separated
+tags: xmcloud,headstart
 canonical_url: https://www.sergevandenoever.nl/XM_Cloud_stay_in_sync_with_the_headstart/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
@@ -54,6 +54,13 @@ I create the following setup for each XM Cloud project:
 The `Compare-Headstart.ps1` script could look like this:
 
 ```powershell
+# A simple menu to do a WinMerge based comparison of parts of the current XM Cloud project 
+# against the headstart project provided by Sitecore used to scaffold an XM Cloud project. 
+# Assumption: WinMerge in installed in the folder tools\WinMerge.
+# Extend depending on your project needs.
+# Author: Serge van den Oever [Macaw]
+# Version: 1.0
+
 $VerbosePreference = 'SilentlyContinue' # change to Continue to see verbose output
 $DebugPreference = 'SilentlyContinue' # change to Continue to see debug output
 $ErrorActionPreference = 'Stop'
