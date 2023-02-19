@@ -5,7 +5,6 @@ import 'typeface-montserrat'
 import 'typeface-merriweather'
 
 import profilePic from './profile-pic.jpg'
-import buyMeACoffeePic from './bmc-button.png'
 import { rhythm } from '../utils/typography'
 
 class Bio extends React.Component {
@@ -38,18 +37,6 @@ class Bio extends React.Component {
           2022 Technology Sitecore Most Valuable Professional<br />
           2021 Technology Sitecore Most Valuable Professional<br />
           <br />
-          If you like my writing<br/>
-          <a href='https://www.paypal.com/donate/?business=RQKF5AEJP7XSQ&no_recurring=0&item_name=Like+my+writings?+Buy+me+a+coffee%21&currency_code=EUR' target='_blank'>
-            <img
-              src={buyMeACoffeePic}
-              alt={`Buy me a coffee when you like my writing!`}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                width: rhythm(6)
-              }}
-            />
-          </a>
         </p>
       </div>
     )

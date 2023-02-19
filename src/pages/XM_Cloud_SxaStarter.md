@@ -10,7 +10,7 @@ canonical_url: https://www.sergevandenoever.nl/XM_Cloud_SxaStarter/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
-In this post I will show you how you can start working with XM Cloud, without having access to an XM Cloud organization yet, by setting up XM Cloud using Docker containers on your local machine.
+In this post, I will show you how you can start working with XM Cloud, without having access to an XM Cloud organization yet, by setting up XM Cloud using Docker containers on your local machine.
 
 ## Getting the project
 
@@ -29,7 +29,7 @@ git clone https://github.com/sitecorelabs/xmcloud-foundation-head-staging.git xm
 
 In the folder `xmcloud-sxa` we will now find all the required files to spin up the Docker containers.
 
-Do `cd xmcloud-sxa` to go to the new created folder. In this folder execute:
+Do `cd xmcloud-sxa` to go to the newly created folder. In this folder execute:
 
 `init.ps1` - configure your system for working with Docker Compose and XM Cloud - in a terminal window with Administrator rights execute the following command: 
 
@@ -37,7 +37,7 @@ Do `cd xmcloud-sxa` to go to the new created folder. In this folder execute:
 .\init.ps1 -InitEnv -LicenseXmlPath "C:\license\license.xml" -AdminPassword "b"
 ```
 
-Note that the location of your Sitecore license file and the administrator password that you choose may vary. After executing this command restart you terminal before executing the next command.
+Note that the location of your Sitecore license file and the administrator password that you choose may vary. After executing this command restart your terminal before executing the next command.
 
 The init command generates the following output:
 
@@ -158,15 +158,15 @@ Ignore the NEXT STEPS, because with XM Cloud we have another approach to deploy 
 }
 ```
 
-## Preparing XM Cloud for deployment of our JSS app
+## Preparing XM Cloud for the deployment of our JSS app
 
-The XM Cloud environment is empty. We need to prepare it for deployment of our JSS app. For this we need to scaffold a headless tenant and a headless site with the name of the JSS app.
+The XM Cloud environment is empty. We need to prepare it for the deployment of our JSS app. For this, we need to scaffold a headless tenant and a headless site with the name of the JSS app.
 
 You can find the name of the JSS app in the `package.json` file:
 
 ![](XM_Cloud_SxaStarter/r3o12amc3123.png)
 
-In this case the name is `sxastarter`.
+In this case, the name is `sxastarter`.
 
 In the content editor create a headless tenant (I call it `acme`):
 
