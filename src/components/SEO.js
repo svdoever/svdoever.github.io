@@ -22,7 +22,7 @@ const query = graphql`
   }
 `
 
-function SEO({ meta, image, title, description, slug }) {
+function SEO({ meta, title, date, spoiler, description, image, tags, slug }) {
   return (
     <StaticQuery
       query={query}
@@ -57,7 +57,7 @@ function SEO({ meta, image, title, description, slug }) {
               },
               {
                 property: 'og:type',
-                content: 'blog',
+                content: 'article',
               },
               {
                 property: 'og:url',
@@ -76,8 +76,12 @@ function SEO({ meta, image, title, description, slug }) {
                 content: metaImage,
               },
               {
+                property: 'og:image:type',
+                content: metaImage.endsWith('jpg') ? 'image/jpeg' : 'image/png',
+              },
+              {
                 name: 'twitter:card',
-                content: 'summary',
+                content: 'summary_large_image',
               },
               {
                 name: 'twitter:creator',
@@ -107,15 +111,22 @@ function SEO({ meta, image, title, description, slug }) {
 SEO.defaultProps = {
   meta: [],
   title: '',
+  spoiler: '',
+  description: '',
+  image: '',
+  tags: [],
   slug: '',
 }
 
 SEO.propTypes = {
+  meta: PropTypes.array,
+  title: PropTypes.string,
+  date: PropTypes.string,
+  spoiler: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  meta: PropTypes.array,
+  tags: PropTypes.array,
   slug: PropTypes.string,
-  title: PropTypes.string.isRequired,
 }
 
 export default SEO

@@ -27,9 +27,12 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          image={post.frontmatter.image || null}
           title={post.frontmatter.title}
-          description={post.frontmatter.spoiler}
+          date={post.frontmatter.date}
+          spoiler={post.frontmatter.spoiler}
+          description={post.frontmatter.description || post.excerpt}
+          image={post.frontmatter.image || null}
+          tags={post.frontmatter.tags? post.frontmatter.tags.split(",").map(item => item.trim()) : []}
           slug={post.fields.slug}
         />
         <h1>{post.frontmatter.title}</h1>
@@ -37,27 +40,15 @@ class BlogPostTemplate extends React.Component {
           style={{
             ...scale(-1 / 5),
             display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
+            marginBottom: rhythm(0.5),
+            marginTop: rhythm(-0.8),
           }}
         >
-          {post.frontmatter.date}
+          {(new Date(post.frontmatter.date)).toDateString()}
           {` • ${formatReadingTime(post.timeToRead)}`}
-          <br/>
-          If you like my writing
-          <br/>
-          <a href='https://www.paypal.com/donate/?business=RQKF5AEJP7XSQ&no_recurring=0&item_name=Like+my+writings?+Buy+me+a+coffee%21&currency_code=EUR' target='_blank'>
-            <img
-              src={buyMeACoffeePic}
-              alt={`Buy me a coffee when you like my writing!`}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                width: rhythm(6)
-              }}
-            />
-          </a>
+          {` • you like my writing? `}<a href='https://www.paypal.com/donate/?business=RQKF5AEJP7XSQ&no_recurring=0&item_name=Like+my+writings?+Buy+me+a+coffee%21&currency_code=EUR' target='_blank'>Buy me a coffee</a>
         </p>
+        {post.frontmatter.image && <img src={post.frontmatter.image} alt={post.frontmatter.title} />}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <p>
           <a href={discussUrl} target="_blank" rel="noopener noreferrer">
@@ -67,6 +58,15 @@ class BlogPostTemplate extends React.Component {
           <a href={editUrl} target="_blank" rel="noopener noreferrer">
             Edit on GitHub
           </a>
+        </p>
+        <p
+          style={{
+                fontSize: '0.8em'
+          }}>
+          This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. 
+          You are free to share and adapt this work for non-commercial purposes, provided you give appropriate credit, 
+          provide a link to the license, and indicate if changes were made. To view a copy of this license, 
+          visit <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">http://creativecommons.org/licenses/by-nc/4.0/</a>.
         </p>
         {/* <div style={{ margin: '90px 0 40px 0' }}>
           <Signup />
@@ -134,8 +134,11 @@ export const pageQuery = graphql`
       timeToRead
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date
         spoiler
+        description
+        image
+        tags
       }
       fields {
         slug
