@@ -4,6 +4,7 @@ import get from 'lodash/get'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
+import AlgoliaDocSearch from '../components/AlgoliaDocSearch'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import { formatReadingTime } from '../utils/helpers'
@@ -19,7 +20,7 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={siteTitle}> 
         <SEO />
         <Bio />
         {posts.map(({ node }) => {

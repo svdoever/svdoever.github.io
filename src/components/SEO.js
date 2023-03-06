@@ -31,8 +31,8 @@ function SEO({ meta, title, date, spoiler, description, image, tags, slug }) {
         const metaDescription = description || siteMetadata.description
         const metaImage = image
           ? image.startsWith('http')
-            ? image 
-            : path.join(siteMetadata.siteUrl, image) 
+            ? image
+            : path.join(siteMetadata.siteUrl, image)
           : path.join(siteMetadata.siteUrl, profilePic)
         const url = `${siteMetadata.siteUrl}${slug}`
         return (
@@ -40,12 +40,12 @@ function SEO({ meta, title, date, spoiler, description, image, tags, slug }) {
             htmlAttributes={{ lang: 'en' }}
             {...(title
               ? {
-                  titleTemplate: `%s - ${siteMetadata.title}`,
-                  title,
-                }
+                titleTemplate: `%s - ${siteMetadata.title}`,
+                title,
+              }
               : {
-                  title: siteMetadata.title,
-                })}
+                title: siteMetadata.title,
+              })}
             meta={[
               {
                 name: 'google-site-verification',
@@ -101,7 +101,10 @@ function SEO({ meta, title, date, spoiler, description, image, tags, slug }) {
               },
             ]
               .concat(meta)}
-          />
+          >
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+            <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+          </Helmet>
         )
       }}
     />
