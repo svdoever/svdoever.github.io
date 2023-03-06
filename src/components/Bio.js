@@ -6,6 +6,7 @@ import 'typeface-merriweather'
 
 import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
+import { MyDocSearch } from './MyDocSearch'
 
 class Bio extends React.Component {
   render() {
@@ -38,7 +39,7 @@ class Bio extends React.Component {
             2021-2023 Technology Sitecore Most Valuable Professional<br />
           </p>
         </div>
-        <div id="algolia_docsearch"></div>
+        <MyDocSearch />
       </>
 
     )

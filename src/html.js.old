@@ -23,8 +23,7 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
             setTimeout(function() {
@@ -33,12 +32,13 @@ export default function HTML(props) {
                 apiKey: '4de30d1138cc009d6a8b1adeb846622e',
                 indexName: 'sergevandenoever',
                 container: '#algolia_docsearch',
+                placeholder: 'Search Serge's blogposts',
                 debug: false // true to inspect modal
               });
             }, 500);
             `,
           }}
-        />
+        /> */}
       </body>
     </html>
   )
