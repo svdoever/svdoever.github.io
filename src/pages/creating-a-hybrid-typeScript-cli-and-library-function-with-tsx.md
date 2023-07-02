@@ -1,6 +1,6 @@
 ---
 title: Creating a Hybrid TypeScript CLI and Library Function with tsx
-published: I write loads of small CLI scripts, but often I want to use the core functionality of the script in other scripts as well. This is an introductory post on how you can achieve this.
+published: true
 date: '2023-07-03'
 spoiler: I write loads of small CLI scripts, but often I want to use the core functionality of the script in other scripts as well. This is an introductory post on how you can achieve this.
 description: I write loads of small CLI scripts, but often I want to use the core functionality of the script in other scripts as well. This is an introductory post on how you can achieve this.
