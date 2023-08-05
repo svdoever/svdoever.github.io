@@ -24,6 +24,7 @@ class BlogPostTemplate extends React.Component {
       ''
     )}.md`
     const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(`https://www.sergevandenoever.nl${slug}`)}`
+    const html = post.html;
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -54,8 +55,12 @@ class BlogPostTemplate extends React.Component {
               {` • you like my writing? `}<a href='https://www.paypal.com/donate/?business=RQKF5AEJP7XSQ&no_recurring=0&item_name=Like+my+writings?+Buy+me+a+coffee%21&currency_code=EUR' target='_blank'>Buy me a coffee</a>
             </p>
  
-            {post.frontmatter.image && <img src={post.frontmatter.image} alt={post.frontmatter.title} />}
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            {
+              post.frontmatter.image && 
+              post.frontmatter.image.startsWith("http") &&
+              <img src={post.frontmatter.image} alt={post.frontmatter.title} />
+            }
+            <div dangerouslySetInnerHTML={{ __html: html }} />
             <p>
               <a href={discussUrl} target="_blank" rel="noopener noreferrer">
                 Discuss on Twitter

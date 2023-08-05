@@ -40,7 +40,6 @@ class BlogIndex extends React.Component {
                 </Link>
               </h3>
               <small>
-                <div>Published: {String(node.frontmatter.published)}</div>
                 <div>Tags: {node.frontmatter.tags}</div>
                 {(new Date(node.frontmatter.date)).toDateString()}
                 {` • ${formatReadingTime(node.timeToRead)}`}
