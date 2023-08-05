@@ -35,8 +35,7 @@ class Bio extends React.Component {
             LinkedIn: <a href="https://www.linkedin.com/in/sergevandenoever/" target="_blank" rel="noopener noreferrer">Serge van den Oever</a> - <a href="https://www.linkedin.com/in/sergevandenoever/detail/recent-activity/posts/" target="_blank" rel="noopener noreferrer">articles on LinkedIn</a><br />
             <br />
             Technology Consultant @ Macaw<br />
-            Competence Team Lead Custom Application Development @ Macaw<br />
-            2021-2023 Technology Sitecore Most Valuable Professional<br />
+            2021-2023 Sitecore Technology MVP<br />
           </p>
         </div>
         <MyDocSearch />
