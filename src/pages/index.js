@@ -24,7 +24,7 @@ class BlogIndex extends React.Component {
         <SEO />
         <Bio />
         {posts.map(({ node }) => {
-          if (process.env.NODE_ENV == 'production' && node.fields.slug.startsWith("/_")) { // posts still under construction start with _
+          if (process.env.NODE_ENV == 'production' && (node.fields.slug.startsWith("/_") || node.frontmatter.published === false) ) { // posts still under construction start with _
             return null;
           };
           const title = get(node, 'frontmatter.title') || node.fields.slug
@@ -40,6 +40,8 @@ class BlogIndex extends React.Component {
                 </Link>
               </h3>
               <small>
+                <div>Published: {String(node.frontmatter.published)}</div>
+                <div>Tags: {node.frontmatter.tags}</div>
                 {(new Date(node.frontmatter.date)).toDateString()}
                 {` • ${formatReadingTime(node.timeToRead)}`}
               </small>
@@ -75,6 +77,8 @@ export const pageQuery = graphql`
           frontmatter {
             date
             title
+            published
+            tags
             spoiler
           }
         }
