@@ -1,7 +1,7 @@
 ---
-title: The title of your blog post
+title: XM Cloud Components - what is it?
 published: false
-date: '2023-01-01'
+date: '2023-07-30'
 spoiler: A not-to-short spoiler line.
 description: description area in Twitter cards and open graph cards
 image: external image URL, starting with https://

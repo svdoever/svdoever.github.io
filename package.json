@@ -11,6 +11,7 @@
     "node": ">=10.0.0"
   },
   "dependencies": {
+    "@docsearch/react": "^3.3.3",
     "gatsby": "^2.13.60",
     "gatsby-plugin-feed": "^2.3.6",
     "gatsby-plugin-google-analytics": "^2.1.7",
@@ -26,6 +27,7 @@
     "gatsby-remark-prismjs": "^3.3.5",
     "gatsby-remark-responsive-iframe": "^2.2.4",
     "gatsby-remark-smartypants": "^2.1.2",
+    "gatsby-remark-vscode": "^3.3.1",
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-remark": "^2.6.13",
     "gatsby-transformer-sharp": "^2.2.6",

@@ -4,6 +4,7 @@ import get from 'lodash/get'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
+import AlgoliaDocSearch from '../components/AlgoliaDocSearch'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import { formatReadingTime } from '../utils/helpers'
@@ -19,11 +20,11 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={siteTitle}> 
         <SEO />
         <Bio />
         {posts.map(({ node }) => {
-          if (process.env.NODE_ENV == 'production' && node.fields.slug.startsWith("/_")) { // posts still under construction start with _
+          if (process.env.NODE_ENV == 'production' && (node.fields.slug.startsWith("/_") || node.frontmatter.published === false) ) { // posts still under construction start with _
             return null;
           };
           const title = get(node, 'frontmatter.title') || node.fields.slug
@@ -39,6 +40,7 @@ class BlogIndex extends React.Component {
                 </Link>
               </h3>
               <small>
+                <div>Tags: {node.frontmatter.tags}</div>
                 {(new Date(node.frontmatter.date)).toDateString()}
                 {` • ${formatReadingTime(node.timeToRead)}`}
               </small>
@@ -74,6 +76,8 @@ export const pageQuery = graphql`
           frontmatter {
             date
             title
+            published
+            tags
             spoiler
           }
         }
