@@ -4,9 +4,9 @@ published: false
 date: '2023-08-13'
 spoiler: Want to save articles on LinkedIn, and even find them back? Sound like an easy functionality, but it isn't...
 description: Want to save articles on LinkedIn, and even find them back? Sound like an easy functionality, but it isn't...
-image: external image URL, starting with https:// - store at https://imgbb.com/
+image: https://i.ibb.co/c2zqV5C/image.png
 tags: linkedin, article, bookmark
-canonical_url: https://www.sergevandenoever.nl/... - link for the canonical version of the content
+canonical_url: https://www.sergevandenoever.nl/linkedin_bookmark_article_and_find_back
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
