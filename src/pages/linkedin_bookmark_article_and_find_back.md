@@ -1,6 +1,6 @@
 ---
 title: Bookmark a LinkedIn article, and find it back
-published: false
+published: true
 date: '2023-08-13'
 spoiler: Want to save articles on LinkedIn, and even find them back? Sound like an easy functionality, but it isn't...
 description: Want to save articles on LinkedIn, and even find them back? Sound like an easy functionality, but it isn't...
