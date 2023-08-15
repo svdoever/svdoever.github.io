@@ -95,7 +95,9 @@ Components can now fetch their own data on runtime in Pages. You finally see cha
 
 ### New data picker
 
-The created components are as powerful as the data that can be bound to it. Besides straight databinding to fields in the Data Source results, it is also possible to use a JSONPath in expert mode. If you select the (i) information icon you are led to the page https://www.npmjs.com/package/jsonpath-plus, with the type of JSONPath queries that can be executed.
+The created components are as powerful as the data that can be bound to it. Besides straight databinding to fields in the Data Source results, it is also possible to use a JSONPath in expert mode. If you select the (i) information icon you are led to the page https://www.npmjs.com/package/jsonpath-plus, with the type of JSONPath queries that can be executed. To test out the expert-mode JSONPath queries using the jsonpath-plus query syntax have a look at the web-based demo environment at https://jsonpath-plus.github.io/JSONPath/demo/:
+
+![JSONPath Plus](XM_Cloud_changelog_Sitecore_Components/JSONPathPlus.png)
 
 ## Conclusion
 
