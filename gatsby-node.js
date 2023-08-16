@@ -20,6 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
+                    published
                   }
                 }
               }
@@ -34,8 +35,23 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create blog posts pages.
         const posts = result.data.allMarkdownRemark.edges;
+        
+        const isProduction = process.env.NODE_ENV === 'production';
+        const isHidden = (node) => (node.fields.slug.startsWith("/_") || node.frontmatter.published === false);
+        const postsFilterHidden = _.filter(posts, (post) => {
+          console.log(post.node.fields.slug, isHidden(post.node));
+          if (isHidden(post.node)) {
+            if (isProduction) {
+              return false;
+            }
+            post.node.frontmatter.title = "[DRAFT] " + post.node.frontmatter.title;
+          }
+          return true;
+        });
 
-        _.each(posts, (post, index) => {
+        _.each(postsFilterHidden, (post, index) => {
+          console.log("YES!!");
+
           const previous = index === posts.length - 1 ? null : posts[index + 1].node;
           const next = index === 0 ? null : posts[index - 1].node;
 
