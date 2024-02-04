@@ -5,18 +5,14 @@ date: 2024-02-01
 spoiler: Finally a write-up of my first steps into AI, an interesting ride, that just got started...
 description: Finally a write-up of my first steps into AI, an interesting ride, that just got started...
 image: external image URL, starting with https:// - store at https://imgbb.com/
-tags:
-  - AI
-  - LLM
-  - chatbot
-  - OpenAI
+tags: AI,LLM,chatbot,OpenAI
 canonical_url: https://www.sergevandenoever.nl/AI_Adventures_how_I_started/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
 Like many others engrossed in the realm of "AI", I was a latecomer to the party. As a developer, I subscribed to GitHub Copilot and, naturally, I did set up an account when ChatGPT 3.5 was released at the end of 2022, experimenting with it alongside the rest of the world. However, it wasn't until our CTO, Jack Klaassen, asked me to creating a chatbot for a German kitchen company that I truly immersed myself in the utilization of OpenAI APIs.
 
-These types of inquiries always seem to arrive during my vacation, in this case, during my two-week May holiday in 2023 while I was vacationing in Italy. My son was preparing for his HAVO exam, providing the perfect opportunity for me to sit beside him, laptop at the ready, and delve into the fascinating world of Large Language Models (LLMs), vector databases, creating embeddings, and making calls to the OpenAI API using the GPT 4 model.
+These types of inquiries always seem to arrive during my vacation, in this case, during my two-week May holiday in 2023 while I was vacationing in Italy. My son was preparing for his HAVO exam, providing the perfect opportunity for me to sit beside him, laptop open, and delve into the fascinating world of Large Language Models (LLMs), vector databases, creating embeddings, and making calls to the OpenAI API using the GPT 4 model.
 
 ### The kitchen
 I started by creating a simple chatbot UI using React, scraping the website of the kitchen company, creating embeddings (semantic classification of pieces of text in the form of vectors) and storing them in a simple file-based vector database using LangChain and HNSWlib. Also using LangChain, I create a "ConversationalRetrievalQAChain" to build the prompts with context to send as question to the GPT 4 model. 
