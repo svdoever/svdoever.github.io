@@ -75,7 +75,8 @@ Standalone question:
 ```
 
 qa-prompt.txt:
-```json
+
+```txt
 Je bent een AI assistent voor de zorgverzekeraar VitaalVerzekerd.
 De website van VitaalVerzekerd is te vinden op https://www.vitaalverzekerd.nl/.
 
@@ -122,17 +123,17 @@ Sorry that most prompt text is in Dutch, but the chatbot is designed to interact
 ### Some results of VitaalVerzekerd
 Here are a few snapshots of the white-label chatbot configured for VitaalVerzekerd. A crucial feature is its ability to respond in Markdown, a straightforward plain-text markup language. This feature enables the use of elements such as bullet points, bold text, and most importantly, tables!
 
-![[VitaalVerzekerd_Q1.png]]
+![VitaalVerzekerd question 1](AI_Adventures_how_I_started/VitaalVerzekerd_Q1.png)
 
-![[VitaalVerzekerd_Q2.png]]
+![VitaalVerzekerd question 2](AI_Adventures_how_I_started/VitaalVerzekerd_Q2.png)
 
 ### Experimentation is key
 Every company will use AI and LLMs eventually, but it is key to start experimenting with it as soon as possible. See what AI can do for your problem domain. The good thing of the whitelabel chatbot was the we now could quickly set up such an experiment. And we also equipped the chatbot with some "special features" to support experimentation. So for example using the settings in the upper-right corner it is possible to configure the model, the answer size (Max Tokens), number of results from the semantic search against the vector database to include, and how much history of previous questions and answers to take into account:
 
-![[Configuration_settings.png]]
+![Chatbot configuration settings](AI_Adventures_how_I_started/Configuration_settings.png)
 
 We also allowed to enter "system commands" to interact directly with the chatbot system:
-![[System_commands.png]]
+![Chatbot system commands](AI_Adventures_how_I_started/System_commands.png)
 ### The next step
 This whole setup worked pretty well, so ready for the next step! Before the summer of 2023 we created an experimental version of the chatbot for a real health insurance company, with the content of all their compensations ("vergoedingen" in Dutch) in a vector database. Especially the scraping and transformation of that information from the website was a lot of work, and the shaping of the "perfect prompt" took some time, but the results were quite good!
 
