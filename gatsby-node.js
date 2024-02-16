@@ -50,7 +50,6 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         _.each(postsFilterHidden, (post, index) => {
-          console.log("YES!!");
 
           const previous = index === posts.length - 1 ? null : posts[index + 1].node;
           const next = index === 0 ? null : posts[index - 1].node;
