@@ -12,6 +12,17 @@ module.exports = {
   pathPrefix: '/',
   plugins: [
     {
+      resolve: `gatsby-plugin-clarity`,
+      options: {
+        // String value for your clarity project ID
+        clarity_project_id: "imsrvpucxf",
+        // Boolean value for enabling clarity while developing
+        // true will enable clarity tracking code on both development and production environments
+        // false will enable clarity tracking code on production environment only
+        enable_on_dev_env: true
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         exclude: [
