@@ -2,10 +2,10 @@
 title: XM Cloud - Pages - feature flags
 published: true
 date: 2024-02-24
-spoiler: Always fun to dive into the network traffic of a web application. In this case  the XM Cloud Pages editor. And what do we see? Feature flags!!
+spoiler: Always fun to dive into the network traffic of a web application. In this case the XM Cloud Pages editor. And what do we see? Feature flags!!
 description: description area in Twitter cards and open graph cards
-image: external image URL, starting with https:// - store at https://imgbb.com/
-tags: []
+image: https://ibb.co/BzZ8gdJ
+tags: XMCloud,Pages,FeatureFlags
 canonical_url: https://www.sergevandenoever.nl/XM_Cloud_Pages_feature_flags
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
