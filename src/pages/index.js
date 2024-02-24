@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
-
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
-import AlgoliaDocSearch from '../components/AlgoliaDocSearch'
 import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import { formatReadingTime } from '../utils/helpers'
