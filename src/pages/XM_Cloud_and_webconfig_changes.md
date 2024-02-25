@@ -1,7 +1,7 @@
 ---
 title: XM Cloud and changing the web.config to disable custom errors
-published: false
-date: '2023-01-24'
+published: true
+date: 2024-02-25
 spoiler: I had quite a few occasions while working with XM Cloud that I got the generic ASP.NET RunTime Error screen, instead of a detailed error description. In this post I explain how to apply modifications to the web.config file of your XM Cloud environment using an XML Document Transform (XDT) file to enable detailed error information.
 description: I had quite a few occasions while working with XM Cloud that I got the generic ASP.NET RunTime Error screen, instead of a detailed error description. In this post I explain how to apply modifications to the web.config file of your XM Cloud environment using an XML Document Transform (XDT) file to enable detailed error information.
 image: https://i.ibb.co/yNPpLXn/clouds-with-rain-turning-into-snow.png
@@ -10,6 +10,8 @@ canonical_url: https://www.sergevandenoever.nl/XM_Cloud_and_webconfig_changes/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
+
+>Note: I saw that this post was not published yet, but I am sure that I published it before. I am not sure what happened, but I am publishing it again. I assume the content is still relevant.
 
 As described in the [XM Cloud developer documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html), the file `xmcloud.build.json` in the root of your XM Cloud project repository is used to configure transformation on existing XML files. The most important XML file in Sitecore context is the `web.config` file. In this blog post, I will describe how to do a transform on the `customErrors` configuration, so we get a more descriptive error message than **Runtime Error** when we are doing development against XM Cloud.
 
