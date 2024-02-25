@@ -5,7 +5,7 @@ date: 2024-02-01
 spoiler: Finally a write-up of my first steps into AI, an interesting ride, that just got started...
 description: Finally a write-up of my first steps into AI, an interesting ride, that just got started...
 image: external image URL, starting with https:// - store at https://imgbb.com/
-tags: AI,LLM,chatbot,OpenAI
+tags: AI, LLM, chatbot, OpenAI
 canonical_url: https://www.sergevandenoever.nl/AI_Adventures_how_I_started/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.

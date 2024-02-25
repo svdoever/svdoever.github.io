@@ -4,8 +4,8 @@ published: true
 date: 2024-02-24
 spoiler: While diving into the network traffic of the XM Cloud Pages editor, I stumbled onto the English translation file for Pages. Good to see all texts in one overview, it tells something about the features of the product...
 description: While diving into the network traffic of the XM Cloud Pages editor, I stumbled onto the English translation file for Pages. Good to see all texts in one overview, it tells something about the features of the product...
-image: https://ibb.co/7z9BJTh
-tags: XMCloud,Pages,Translation
+image: https://i.ibb.co/X4w6ZdH/image.png
+tags: XMCloud, Pages, Translation
 canonical_url: https://www.sergevandenoever.nl/XM_Cloud_Pages_what_do_translation_files_tell_us
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
