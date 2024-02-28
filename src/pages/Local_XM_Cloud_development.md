@@ -5,7 +5,7 @@ date: '2022-10-11'
 spoiler: Although XM Cloud runs in the cloud, development can be done locally using Docker containers. This way we can see what we can do with XM Cloud without having access to the real stuff (yet).
 description: Explore XM Cloud locally using Docker containers.
 tags: xmcloud, docker, sitecore
-canonical_url: https://www.sergevandenoever.nl/... - link for the canonical version of the content
+canonical_url: https://www.sergevandenoever.nl/Local_XM_Cloud_development
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---

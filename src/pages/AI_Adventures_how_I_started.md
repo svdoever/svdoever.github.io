@@ -10,24 +10,24 @@ canonical_url: https://www.sergevandenoever.nl/AI_Adventures_how_I_started/
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
-Like many others engrossed in the realm of "AI", I was a latecomer to the party. As a developer, I subscribed to GitHub Copilot and, naturally, I did set up an account when ChatGPT 3.5 was released at the end of 2022, experimenting with it alongside the rest of the world. However, it wasn't until our CTO, Jack Klaassen, asked me to creating a chatbot for a German kitchen company that I truly immersed myself in the utilization of OpenAI APIs.
+Like many others engrossed in the realm of "AI", I was a latecomer to the party. As a developer, I subscribed to GitHub Copilot and, naturally, I set up an account when ChatGPT 3.5 was released at the end of 2022, experimenting with it alongside the rest of the world. However, it wasn't until our CTO, Jack Klaassen, asked me to create a chatbot for a German kitchen company that I truly immersed myself in the utilization of OpenAI APIs.
 
 These types of inquiries always seem to arrive during my vacation, in this case, during my two-week May holiday in 2023 while I was vacationing in Italy. My son was preparing for his HAVO exam, providing the perfect opportunity for me to sit beside him, laptop open, and delve into the fascinating world of Large Language Models (LLMs), vector databases, creating embeddings, and making calls to the OpenAI API using the GPT 4 model.
 
 ### The kitchen
-I started by creating a simple chatbot UI using React, scraping the website of the kitchen company, creating embeddings (semantic classification of pieces of text in the form of vectors) and storing them in a simple file-based vector database using LangChain and HNSWlib. Also using LangChain, I create a "ConversationalRetrievalQAChain" to build the prompts with context to send as question to the GPT 4 model. 
+I started by creating a simple chatbot UI using React, scraping the website of the kitchen company, creating embeddings (semantic classification of pieces of text in the form of vectors) and storing them in a simple file-based vector database using LangChain and HNSWlib. Also using LangChain, I create a "ConversationalRetrievalQAChain" to build the prompts with context to send as questions to the GPT 4 model. 
 
 Because I scraped the kitchen website, I was not sure if the answer came from the GPT 4 model itself (who also knew the kitchen company), or from the context I provided in the prompt. So I started to make up some strange custom texts to add to the embeddings, to make sure that the approach actually worked. And it did!
 
 ### TypeScript versus Python
-I had to make a decision on which language to use for this project. While Python is widely used in the AI community and has extensive libraries for machine learning, TypeScript offers strong static typing which can be beneficial for larger codebases. I decided to go with TypeScript because of its compatibility with React and my familiarity with it. LangChain has a [TypeScript version](https://js.langchain.com/) which made it easy to integrate into my project.
+I had to decide on which language to use for this project. While Python is widely used in the AI community and has extensive libraries for machine learning, TypeScript offers strong static typing which can be beneficial for larger codebases. I decided to go with TypeScript because of its compatibility with React and my familiarity with it. LangChain has a [TypeScript version](https://js.langchain.com/) which made it easy to integrate into my project.
 ### Whitelabel chatbot
-After I had my setup working, I turned the whole setup in a "whitelabel" approach, with two projects:
+After I had my setup working, I turned the whole setup into a "white label" approach, with two projects:
 
-- **openai-chat-headstart** - the React chatbot frontend in Next.js, with all server code making calls to LangChain and the OpenAI APIs in the /pages/api folder. Yes, it was still a good old page router based Next.js application.
+- **openai-chat-headstart** - the React chatbot frontend in Next.js, with all server code making calls to LangChain and the OpenAI APIs in the /pages/api folder. Yes, it was still a good old page router-based Next.js application.
 - **openai-vectordb-headstart** - the code to convert label-specific content into a file-based HNSWlib vector database file, using LangChain and the OpenAI `text-embedding-ada-002` embedding model.  
 
-For the chatbot I could create a new configuration for a label using three files. For example for an imaginary health insurance company **VitaalVerzekerd**, I created the following configuration files:
+For the chatbot, I could create a new configuration for a label using three files. For example for an imaginary health insurance company **VitaalVerzekerd**, I created the following configuration files:
 
 chatbot-configuration.json:
 ```json
@@ -140,11 +140,11 @@ This whole setup worked pretty well, so ready for the next step! Before the summ
 ### Lessons learned
 Creating a few chatbots with this experimental setup was great for learning, both for me and for the organizations using the chatbot. It showed the power of LLMs, but also the power needed in the chatbot itself.
 
-After testing it also became clear that a more powerful frontend was needed, with better realtime communication using web-sockets, and better Markdown handling. Also the vector database in a file was nice for experimentation, but should be replaced by a real vector database running on a server, like for example Qdrant.
+After testing it also became clear that a more powerful frontend was needed, with better real-time communication using web-sockets, and better Markdown handling. Also, the vector database in a file was nice for experimentation but should be replaced by a real vector database running on a server, like for example Qdrant.
 
 ### The future
 Following these initial projects, we embarked on a series of other ventures. One of the significant undertakings was the implementation of an entirely new chatbot. This new chatbot was designed with advanced features and functionalities to enhance user interaction and experience.
 
-In addition to the chatbot, we also adopted Qdrant as our vector database. Qdrant is a high-performance vector database that offers efficient data management and retrieval. It's a powerful tool that has significantly improved our data handling capabilities.
+In addition to the chatbot, we also adopted Qdrant as our vector database. Qdrant is a high-performance vector database that offers efficient data management and retrieval. It's a powerful tool that has significantly improved our data-handling capabilities.
 
 However, these are just the highlights of our recent projects. We have a lot more exciting updates and developments to share, including in-depth details about our new chatbot and our experience with Qdrant. Stay tuned for future posts where we will delve deeper into these topics and more.

@@ -12,7 +12,7 @@ series: post series name.
 ---
 With the Sitecore Demo Portal it is possible to make modifications to your Sitecore XM Content Management environment by connecting your environment to a GitHub repository containing a folder named `cm`. All files in the `cm` folder of your repository are synced to the folder `c:\inetpub\wwwroot` of your CM environment. This makes it possible to add additional files or to make modifications to for example the `web.config` using patch files. This sync process is described here: [Demo Portal - Deploying files to CM instance](https://portal.sitecoredemo.com/help#git-overview). The way to create patch file is described here: [Use a patch file to customize the Sitecore configuration | Sitecore Documentation](https://doc.sitecore.com/xp/en/developers/103/platform-administration-and-architecture/use-a-patch-file-to-customize-the-sitecore-configuration.html)
 
-To see if your web.config changes were applied correctly you can see the resulting web.config by accessing the URL:
+To see if your web.config changes were applied correctly you can see the resulting `web.config` by accessing the URL:
 
 https://yoursite-cm.sitecoredemo.com/sitecore/admin/showConfig.aspx
 
