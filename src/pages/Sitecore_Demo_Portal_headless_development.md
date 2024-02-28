@@ -10,7 +10,7 @@ canonical_url: https://www.sergevandenoever.nl/Sitecore_Demo_Portal_headless_dev
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
-In this post, I will take you through the steps to use Sitecore XM version 10.3 running as an instance on the Sitecore Demo Portal, as a headless CMS. I will show the required configurations to build a front-end application that uses the content of the Sitecore XM instance.
+In this post, I will take you through the steps to use Sitecore XM version 10.3 running as an instance on the Sitecore Demo Portal, as a headless CMS. I will show the required configurations to build a front-end application that uses the content of the Sitecore XM instance and works with the Experience Editor.
 
 ## Introduction
 What we see is that many customers upgraded their Sitecore XM/XP environment to version 10.2, but not version 10.3 or higher yet, because they don't directly see the benefits. But there are good reasons to upgrade to version 10.3 or higher because there are some interesting features available to build better composable solutions. Three features I would like to mention are:
