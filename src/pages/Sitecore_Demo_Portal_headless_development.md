@@ -2,7 +2,7 @@
 title: Sitecore Demo Portal - 10.3+ SXA headless development
 published: true
 date: 2024-02-28
-spoiler: In this post, I will take you through the steps to use Sitecore XM version 10.3, running as an instance on the Sitecore Demo Portal, as a headless CMS, and explain how to build a front-end application that uses the content of the Sitecore XM instance.
+spoiler: In this post, I will take you through the steps to use Sitecore XM version 10.3 running as an instance on the Sitecore Demo Portal, as a headless CMS. I will show the required configurations to build a front-end application that uses the content of the Sitecore XM instance and works with the Experience Editor.
 description: Use Sitecore Demo Portal to showcase headless development against Sitecore XM 10.3+
 image: https://i.ibb.co/31K5nnn/Headless-CMS-vs-traditional-CMS.jpg
 tags: Sitecore Demo Portal, Sitecore XM, Sitecore Experience Edge, headless CMS, JSS, Next.js, Vercel
@@ -22,13 +22,15 @@ What we see is that many customers upgraded their Sitecore XM/XP environment to 
 With Sitecore 10.3+ we can easily enter the composable DXP world, where the front-end is not running on top of a Sitecore XM delivery server, while still using the power of (headless) SXA. We can show our customers the capabilities of Sitecore XM (and XP) as a headless or hybrid CMS.
 
 ## Setting up the Sitecore XM 10.3+ Environment
-We want to showcase headless development, so an XM 10.3+ environment is perfect for that. We can quickly set-up an environment with the [Sitecore Demo Portal](https://portal.sitecoredemo.com/):
+We want to showcase headless development, so an XM 10.3+ environment is perfect for that. We can quickly set up an environment with the [Sitecore Demo Portal](https://portal.sitecoredemo.com/):
 
-![Experience Manager good enough](Sitecore_Demo_Portal_headless_development/image-20242241758552.png)
+![Sitecore Demo Portasl products](Sitecore_Demo_Portal_headless_development/image-20242241758552.png)
 
-Although there are some great demos available, like PLAY! Summit and Play! Shop, they quickly become too big. We want to get started lean an mean, and therefore select the empty template with Sitecore XM and Experience Edge in it:
+Although there are some great demos available, like **PLAY! Summit** and **Play! Shop**, they quickly become too big. We want to get started lean and mean, and therefore select the empty template with Sitecore XM and Experience Edge in it:
 
-![X + Experience Edge](Sitecore_Demo_Portal_headless_development/image-2024224204549.png)
+![XM + Experience Edge](Sitecore_Demo_Portal_headless_development/image-2024224204549.png)
+
+> What is Experience Edge? Sitecore Experience Edge is an API-based service from Sitecore that gives you globally replicated, scalable access to your Sitecore Experience Platform items, layout, and media. It replaces the traditional delivery tier of Sitecore XM and XP, and is designed to be used with headless front-end applications. Experience Edge is a cloud-based service that is designed to be used with Sitecore XM and XP, and is available as a standalone service or as part of Sitecore Managed Cloud. For a nice introduction video see[What is Sitecore Experience Edge? | YouTube]( https://www.youtube.com/watch?v=_xw-02PZQTE). Thanks Margo Stapel!
 
 Now just fill in the name, region and description:
 
@@ -57,7 +59,7 @@ I'm a late bird, so I put the time on the latest possible time... an early eveni
 
 ![Nice summary overview](Sitecore_Demo_Portal_headless_development/image-2024224437545.png)
 
-Deployment will take a while, but in the meantime we can study some details about our deployment:
+Deployment will take a while, but in the meantime, we can study some details about our deployment:
 
 ![Deployment details](Sitecore_Demo_Portal_headless_development/image-20242244532675.png)
 
@@ -80,7 +82,7 @@ What is also cool is that with the **Manage** button under Member & Ownership we
 
 ![User management](Sitecore_Demo_Portal_headless_development/image-20242245257914.png)
 
-With the **View Deployment Details** button we get to a screen where we can follow the deployment progress:
+With the **View Deployment Details** button, we get to a screen where we can follow the deployment progress:
 
 ![Deployment progress](Sitecore_Demo_Portal_headless_development/image-20242245520362.png)
 
@@ -141,6 +143,8 @@ In the root folder, we create a folder `cm`, as described in [Help | Demo Portal
 
 Next to that, we will create a `src` folder, and in this `src` folder, we can create out front-end websites. We can use the [The JSS app initializer | Sitecore Documentation](https://doc.sitecore.com/xp/en/developers/hd/21/sitecore-headless-development/the-jss-app-initializer.html) to scaffold these websites. Lets start with a website called `acme-website`.
 
+> Why `acme-website`? I often use ACME as a sample company name in blogposts and demos. The "ACME" company, often featured in the "Road Runner" cartoon series, is a fictional corporation that provides a wide array of products, many of which are absurdly specialized, implausible, or downright dangerous. ACME is best known for supplying Wile E. Coyote with a variety of gadgets, tools, and devices intended to help him catch the Road Runner. These products, however, invariably fail, often with comical consequences.
+> 
 ![Using the JSS app initializer](Sitecore_Demo_Portal_headless_development/image-20242245013828.png)
 
 After selecting `nextjs` we go for the following configuration settings, where we also select the `nextjs-sxa` add-on initializer, so we can combine the power of Next.js with the power of SXA:
@@ -151,8 +155,8 @@ After installation, we are greeted with:
 
 ![Greeting after installation](Sitecore_Demo_Portal_headless_development/image-20242245747726.png)
 
-### Remove .git folder from scaffolded website
-The scaffolding tooling initializes a Git repository in the `src/acme-website` folder. This folder is already part of a Git repository, so we need to clean the `.git`` folder as follows:
+### Remove .git folder from the scaffolded website
+The scaffolding tooling sets up our headless website code, but also initializes a Git repository in the `src/acme-website` folder. This folder is already part of a Git repository, so we need to clean the `.git`` folder as follows:
 
 ```
 cd src/acme-website
@@ -265,6 +269,8 @@ npx localtunnel --port 3000 --subdomain xm-edge-headless --print-requests
 
 Now navigate to https://xm-edge-headless.loca.lt, the new external URL our website is accessible on. Following the instructions on making the site accessible, and be amazed by the same blank screen, but now on an external URL.
 
+> Note that when localtunnel is used, it always provides you with an external accessible website as a subdomain of `loca.lt`. The top-level domain `lt` is the country code top-level domain for Lithuania.
+
 ### Configure the Rendering Host in Sitecore
 Next step is to make the Sitecore site `acme-website` use this Editing Host. Open the Content Editor and duplicate the item `/sitecore/system/Settings/Services/Rendering Hosts/Default` to `/sitecore/system/Settings/Services/Rendering Hosts/Local Development`, and set the following values:
 
@@ -324,8 +330,10 @@ So each developer will see its own version of the code of the front-end applicat
 This setup facilitates seamless communication between Sitecore's Experience Editor and the headless rendering host, enabling all the advanced editing features without the limitations imposed by local-only development environments.
 
 But when this developer goes home, all developers will loose connection. This could be resolved by running localtunnel in a more centralized and stable manner to avoid losing the connection when the developer who initiated the tunnel goes offline. This approach involves setting up the localtunnel on a server or a dedicated machine that remains online continuously, ensuring that the tunnel and, consequently, the access to the application running on `http://localhost:3000` remain active regardless of individual developers' schedules. But this is a topic for a future blogpost!
+
 ## What is missing - front-end website deployments!
-We are missing two front-end website deployments. A deployment for the Sitecore product specialist where they can edit and publish the website content, and a deployment for the end-user, where the published website content is shown. You can use Vercel to deploy these two websites, because it is the easiest way to get the websites up and running, but there is no reason not to use other platforms like Netlify, Azure Static Web Apps, or any self hosted website, as long as a Next.js based application can be deployed.
+We are missing two front-end website deployments. A deployment for the Sitecore product specialist where they can edit and publish the website content, and a deployment for the end-user, where the published website content is shown. You can use Vercel to deploy these two websites, because it is the easiest way to get the websites up and running, but there is no reason not to use other platforms like [Netlify](https://www.netlify.com/with/nextjs/), [Azure Static Web Apps](https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-nextjs-hybrid), or any self hosted website, as long as a Next.js based application can be deployed.
+
 ### Deployment of the Editing Host to Vercel
 First make sure that the latest code is deployed to our GitHub repository.
 
@@ -381,7 +389,10 @@ GRAPH_QL_SERVICE_RETRIES=0
 FETCH_WITH=GraphQL
 ```
 
-Content becomes visible on the production website when the content is published from Sitecore XM Content Management instance to Sitecore Experience Edge
+Content becomes visible on the production website when the content is published from Sitecore XM Content Management instance to Sitecore Experience Edge.
+
+> Note that in the above set up even the environment variable `SITECORE_API_HOST` is not needed anymore. The `GRAPH_QL_ENDPOINT` is the only thing needed to connect to the Sitecore Experience Edge.
+
 ## Conclusion
  In this walk-through, we have successfully set up a Sitecore website, made it accessible from the outside world using localtunnel, and showed editing its content using the Experience Editor. Then we showed how to make the Experience Editor work from a website deployed to Vercel, and the deployment of the production website for the end-user to Vercel.
 
