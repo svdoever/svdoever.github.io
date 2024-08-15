@@ -151,6 +151,8 @@ After selecting `nextjs` we go for the following configuration settings, where w
 
 ![Configuration settings](Sitecore_Demo_Portal_headless_development/image-2024224545582.png)
 
+> Note that in the configuration it is possible to choose how you like to prerender your application. There are two choices: SSR (Server Side Rendering) and SSG (Static Site Generation). What this mean in the context of Sitecore is described in detail on [Prerendering methods and data fetching strategies in JSS Next.js apps](https://doc.sitecore.com/xp/en/developers/hd/21/sitecore-headless-development/prerendering-methods-and-data-fetching-strategies-in-jss-next-js-apps.html).
+
 After installation, we are greeted with:
 
 ![Greeting after installation](Sitecore_Demo_Portal_headless_development/image-20242245747726.png)
