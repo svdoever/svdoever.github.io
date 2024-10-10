@@ -10,7 +10,7 @@ canonical_url: https://www.sergevandenoever.nl/XM_Cloud_from_scratch_part_3
 cover_image: https://i.ibb.co/QdH0vYq/image.png
 series: XM Cloud From Scratch
 ---
-To get started with development we need to set up your local development environment for Sitecore XM Cloud, you clone the project repository from GitHub or Azure DevOps, install necessary packages, and connect to the XM Cloud preview endpoint. This involves creating a `.env.local` file with environment variables, running `npm install` to install dependencies, and starting the application locally with `npm run start:connected`. Finally, you can view your application at `http://localhost:3000/` to confirm the setup.
+6To get started with development we need to set up your local development environment for Sitecore XM Cloud, you clone the project repository from GitHub or Azure DevOps, install necessary packages, and connect to the XM Cloud preview endpoint. This involves creating a `.env.local` file with environment variables, running `npm install` to install dependencies, and starting the application locally with `npm run start:connected`. Finally, you can view your application at `http://localhost:3000/` to confirm the setup.
 
 This is described in [Set up your local development environment | Sitecore Documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/set-up-your-local-development-environment.html)
 But along the way I would like to add some comments, and give some clarification.
