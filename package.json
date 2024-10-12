@@ -52,6 +52,7 @@
   "homepage": "https://www.sergevandenoever.nl",
   "license": "MIT",
   "scripts": {
+    "init" : "npm install --legacy-peer-deps",
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",

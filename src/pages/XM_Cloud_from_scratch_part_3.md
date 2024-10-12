@@ -10,7 +10,7 @@ canonical_url: https://www.sergevandenoever.nl/XM_Cloud_from_scratch_part_3
 cover_image: https://i.ibb.co/QdH0vYq/image.png
 series: XM Cloud From Scratch
 ---
-6To get started with development we need to set up your local development environment for Sitecore XM Cloud, you clone the project repository from GitHub or Azure DevOps, install necessary packages, and connect to the XM Cloud preview endpoint. This involves creating a `.env.local` file with environment variables, running `npm install` to install dependencies, and starting the application locally with `npm run start:connected`. Finally, you can view your application at `http://localhost:3000/` to confirm the setup.
+To get started with development we need to set up your local development environment for Sitecore XM Cloud, you clone the project repository from GitHub or Azure DevOps, install necessary packages, and connect to the XM Cloud preview endpoint. This involves creating a `.env.local` file with environment variables, running `npm install` to install dependencies, and starting the application locally with `npm run start:connected`. Finally, you can view your application at `http://localhost:3000/` to confirm the setup.
 
 This is described in [Set up your local development environment | Sitecore Documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/set-up-your-local-development-environment.html)
 But along the way I would like to add some comments, and give some clarification.
@@ -70,7 +70,7 @@ Copy the output, execute `notepad $profile` (create if the file does not exist y
 
 Next step (as documented in the Sitecore documentation) is to use the latest Node.js LTS version. On [Node.js — Run JavaScript Everywhere (nodejs.org)](https://nodejs.org/en) we can see this is version 20.16.0 at the time of writing.
 
-![[image-20240816001326092.png]]
+![](XM_Cloud_from_scratch_part_3/image-20240816001326092.png)
 
 We can now type the following command to install and use Node.js version 20.16.0:
 
@@ -87,7 +87,7 @@ For detailed documentation on how to use FNM have a look at [fnm/docs/commands.m
 ## Get the next steps
 Head over XM Cloud Deploy at https://deploy.sitecorecloud.io/. Under **Projects** select your project and environment, and select the **Developer settings** tab:
 
-![[image-20240816005247952.png]]
+![](XM_Cloud_from_scratch_part_3/image-20240816005247952.png)
 
 On this **Developer settings** tab we find all required information. 
 ## Check out the code
@@ -131,7 +131,7 @@ npm run start:connected
 
 If you navigate to http://localhost:3000 you will now see:
 
-![[image-20240816013346736.png]]
+![](XM_Cloud_from_scratch_part_3/image-20240816013346736.png)
 ## Editing Hosts and Rendering Hosts in Sitecore XM Cloud
 
 Although we normally talk about the "rendering host" regarding the front-end application, in Sitecore XM Cloud, editing hosts and rendering hosts serve distinct yet complementary roles. The rendering host is the front-end application responsible for displaying content to end users. In contrast, the editing host is a similar application but tailored for content editing within tools like the Experience Editor. While both hosts share the same codebase, the editing host is not intended for live traffic. When setting up your environment, Sitecore provides a default editing host. It is not possible to only deploy the front-end application to this editing host.
