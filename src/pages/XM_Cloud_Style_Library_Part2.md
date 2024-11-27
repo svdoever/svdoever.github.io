@@ -4,7 +4,7 @@ published: true
 date: 2024-11-18
 spoiler: In this post we do a deepdive on what exactly happens under the hood of XM Cloud Components Style library, and investigate what more we could do the ourtcome of the Style Library.  
 description: In this post we do a deepdive on what exactly happens under the hood of XM Cloud Components Style library, and investigate what more we could do the ourtcome of the Style Library.
-image: https://i.ibb.co/2SjhT4N/2024-11-26-18-37-41.png
+image: https://i.ibb.co/zNyXm02/2024-11-17-00-30-23.png
 tags: XMCloud, Components, Style Library
 canonical_url: https://www.sergevandenoever.nl/XM_Cloud_Style_Library_Part2.md
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
