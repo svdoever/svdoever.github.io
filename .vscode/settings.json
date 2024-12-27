@@ -32,5 +32,8 @@
             "language": "markdown",
             "scheme": "file"
         }
-    ]
+    ],
+    "pasteImage.path": "${currentFileNameWithoutExt}",
+    "pasteImage.basePath": "${currentFileDir}",
+    "pasteImage.showFilePathConfirmInputBox": true
 }
