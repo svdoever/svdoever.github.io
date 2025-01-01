@@ -1,16 +1,16 @@
 ---
-title: Setup for LLM experimentation for OpenAI API and local models
+title: Setup for LLM experimentation with OpenAI API and local models
 published: true
 date: 2025-01-01
-spoiler: In this post I will describe how I use Docker Compose to set up an LLM experimentation environment where I can connect tools and chat to cloud-based and local LLM models, and monitor exactly the executed prompts, its completions, the amount of tokens used and the costs.
-description: In this post I will describe how I use Docker Compose to set up an LLM experimentation environment where I can connect tools and chat to cloud-based and local LLM models, and monitor exactly the executed prompts, its completions, the amount of tokens used and the costs.
+spoiler: In this post I will describe how I use Docker Compose to set up an LLM experimentation environment where I can connect tools and chat to cloud-based OpenAI API compatible and local LLM models, and monitor exactly the executed prompts, its completions, the number of tokens used and the costs.
+description: In this post I will describe how I use Docker Compose to set up an LLM experimentation environment where I can connect tools and chat to cloud-based and local LLM models, and monitor exactly the executed prompts, its completions, the number of tokens used and the costs.
 image: external image URL, starting with https:// - store at https://imgbb.com/
 tags: OpenAI, LiteLLM, Langfuse, PromptLayer 
 canonical_url: https://www.sergevandenoever.nl/OpenAI_API_local_models
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 ---
-In this post I will describe how I use Docker Compose to set up an LLM experimentation environment where I can connect tools and chat to cloud-based and local LLM models, and monitor exactly the executed prompts, its completions, the amount of tokens used and the costs.
+In this post I will describe how I use Docker Compose to set up an LLM experimentation environment where I can connect tools and chat to cloud-based and local LLM models, and monitor exactly the executed prompts, its completions, the number of tokens used and the costs.
 
 ## Introduction
 I have done quite some experimental projects with AI and LLMs, from chatbots with RAG to generative AI, from AI focused apps to infusion of AI capabilities in applications. I work at a Microsoft house, so the obvious choice has been the Azure OpenAI LLM models, and therefore using the OpenAI API. And I must say, the OpenAI APIs work for me and I see no reasons to learn other APIs, or support other APIs in the software I build. But on the other hand: I want to experiment with other models as well, and I see a big future for SLM (Small Language Models) and models running local on your machine.
